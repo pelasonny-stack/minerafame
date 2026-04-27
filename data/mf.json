@@ -11,7 +11,7 @@
     "label": "Trabajamos todas las marcas:",
     "primaryLink": {
       "label": "Caesarstone",
-      "href": "index.html"
+      "href": "https://caesarstone.com.ar/"
     },
     "brands": "Silestone · Dekton · Neolith · Laminam · Intecstone"
   },
@@ -44,7 +44,7 @@
       {
         "id": "caesarstone",
         "label": "Caesarstone",
-        "href": "index.html"
+        "href": "https://caesarstone.com.ar/"
       },
       {
         "id": "contacto",
@@ -67,7 +67,7 @@
         "subHtml": "Distribuidor oficial. 11 modelos con stock inmediato en Buenos Aires.",
         "primaryCta": {
           "label": "Ver catálogo Caesarstone",
-          "href": "index.html"
+          "href": "https://caesarstone.com.ar/"
         },
         "secondaryCta": {
           "label": "Todos los materiales",
@@ -219,7 +219,7 @@
         "name": "Caesarstone Sinterizado",
         "tag": "Representante Oficial · 11 modelos en stock",
         "ctaLabel": "Ver catálogo",
-        "href": "index.html",
+        "href": "https://caesarstone.com.ar/",
         "img": {
           "src": "assets/minerafame/featured-caesarstone.jpg",
           "alt": "Caesarstone"
@@ -316,7 +316,7 @@
     "desc": "Sinterizado premium con stock inmediato en Buenos Aires. 11 modelos del catálogo global, distribuidos exclusivamente por Minera Fame S.A.",
     "cta": {
       "label": "Ver catálogo Caesarstone",
-      "href": "index.html"
+      "href": "https://caesarstone.com.ar/"
     }
   },
   "contact": {

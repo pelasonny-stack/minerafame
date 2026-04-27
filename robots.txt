@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /assets/fonts/
+Disallow: /admin/
+Disallow: /admin-mf-791e586c608e.html
+
+Sitemap: https://minerafame.com.ar/sitemap.xml

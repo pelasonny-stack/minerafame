@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / procesos
+*.log
+npm-debug.log*
+.ngrok/
+ngrok.yml
+
+# Tmp
+.tmp/
+tmp/

@@ -1,0 +1,443 @@
+{
+  "_schemaVersion": 1,
+  "_meta": {
+    "site": "mf",
+    "updatedAt": "2026-04-25T00:00:00Z",
+    "updatedBy": "initial-extraction",
+    "commit": "init"
+  },
+  "documentTitle": "Minera Fame S.A. — Marmolería, Granito, Silestone y Caesarstone en Buenos Aires",
+  "ribbon": {
+    "label": "Trabajamos todas las marcas:",
+    "primaryLink": {
+      "label": "Caesarstone",
+      "href": "index.html"
+    },
+    "brands": "Silestone · Dekton · Neolith · Laminam · Intecstone"
+  },
+  "header": {
+    "logo": {
+      "src": "assets/logos/minera-fame.png",
+      "alt": "Minera Fame S.A."
+    },
+    "nav": [
+      {
+        "id": "empresa",
+        "label": "Empresa",
+        "href": "#empresa"
+      },
+      {
+        "id": "materiales",
+        "label": "Materiales",
+        "href": "#materiales"
+      },
+      {
+        "id": "proyectos",
+        "label": "Proyectos",
+        "href": "#proyectos"
+      },
+      {
+        "id": "servicios",
+        "label": "Servicios",
+        "href": "#servicios"
+      },
+      {
+        "id": "caesarstone",
+        "label": "Caesarstone",
+        "href": "index.html"
+      },
+      {
+        "id": "contacto",
+        "label": "Contacto",
+        "href": "#contacto"
+      }
+    ]
+  },
+  "hero": {
+    "slides": [
+      {
+        "id": "caesarstone",
+        "kind": "video",
+        "videoUrl": "https://player.vimeo.com/video/1091739592?background=1&autoplay=1&loop=1&muted=1&playsinline=1",
+        "videoTitle": "Caesarstone — cocina",
+        "posterImg": "assets/minerafame/hero-caesarstone.jpg",
+        "logoImg": "assets/logos/caesarstone-logo.png",
+        "eyebrow": "",
+        "titleHtml": "en Argentina",
+        "subHtml": "Distribuidor oficial. 11 modelos con stock inmediato en Buenos Aires.",
+        "primaryCta": {
+          "label": "Ver catálogo Caesarstone",
+          "href": "index.html"
+        },
+        "secondaryCta": {
+          "label": "Todos los materiales",
+          "href": "#materiales"
+        }
+      },
+      {
+        "id": "proyectos",
+        "kind": "image",
+        "posterImg": "assets/minerafame/hero-proyectos.jpg",
+        "posterAlt": "Cocina con isla en Dekton Laurent — obra Minera Fame",
+        "eyebrow": "50 años transformando espacios",
+        "titleHtml": "Proyectos<br>a medida",
+        "subHtml": "Desarrollamos sus ideas adaptándonos a cada una de sus necesidades. Importadores directos, planta propia en Caseros.",
+        "primaryCta": {
+          "label": "Conocer la empresa",
+          "href": "#empresa"
+        },
+        "secondaryCta": {
+          "label": "Contactarnos",
+          "href": "#contacto"
+        }
+      },
+      {
+        "id": "marmoles",
+        "kind": "image",
+        "posterImg": "assets/minerafame/hero-marmoles.jpg",
+        "posterAlt": "Mármol con veteado dramático — selección Minera Fame",
+        "eyebrow": "Importadores directos",
+        "titleHtml": "Mármoles<br>y Granitos",
+        "subHtml": "Estilo y calidad en cada placa. Importadores directos del 80% de los materiales que trabajamos.",
+        "primaryCta": {
+          "label": "Ver catálogo",
+          "href": "#materiales"
+        },
+        "secondaryCta": null
+      },
+      {
+        "id": "fachada",
+        "kind": "image",
+        "posterImg": "assets/minerafame/material-fachada-ventilada.jpg",
+        "posterAlt": "Revestimiento modular de mármol — fachada ventilada",
+        "eyebrow": "Novedad",
+        "titleHtml": "Fachada<br>Ventilada",
+        "subHtml": "La solución rápida y práctica para usar mármol natural en tus espacios. Ahorro energético garantizado.",
+        "primaryCta": {
+          "label": "Saber más",
+          "href": "#fachada"
+        },
+        "secondaryCta": null
+      }
+    ]
+  },
+  "statsBar": [
+    {
+      "id": "anios",
+      "count": 50,
+      "suffix": "+",
+      "label": "Años de experiencia"
+    },
+    {
+      "id": "planta",
+      "count": 3000,
+      "suffix": "m²",
+      "label": "Planta industrial"
+    },
+    {
+      "id": "lineas",
+      "count": 6,
+      "suffix": "",
+      "label": "Líneas de materiales"
+    },
+    {
+      "id": "sucursales",
+      "count": 2,
+      "suffix": "",
+      "label": "Sucursales en Buenos Aires"
+    }
+  ],
+  "empresa": {
+    "logo": {
+      "src": "assets/logos/minera-fame-50.png",
+      "alt": "Minera Fame S.A. — 50 años de experiencia en mármol"
+    },
+    "eyebrow": "Quiénes somos",
+    "title": "Una empresa con raíces en la piedra",
+    "paragraphs": [
+      "MINERAFAME Mármoles y Granitos es una empresa con más de 50 años de experiencia en el mercado con reconocida trayectoria en la fabricación y colocación en obra. Somos importadores directos del 80% de los mármoles y granitos que trabajamos en nuestro taller.",
+      "Con una planta industrial de 3.000 m² en Caseros, Buenos Aires, contamos con tecnología de punta que nos permite obtener bajos costos de producción y calidad superior en nuestras terminaciones. Nuestro equipo de arquitectos lo ayudará a desarrollar sus ideas, brindando soluciones integrales a sus necesidades."
+    ],
+    "features": [
+      "Planta propia — 3.000 m² en Caseros",
+      "Importadores directos del 80% de nuestros materiales",
+      "Representantes oficiales de Caesarstone, Silestone, Dekton y más",
+      "Medición, colocación y seguimiento de obra"
+    ],
+    "cta": {
+      "label": "Contactarnos por WhatsApp",
+      "href": "https://wa.me/5491159311038",
+      "external": true
+    },
+    "differentials": [
+      {
+        "id": "anios",
+        "num": "01",
+        "titleHtml": "<strong>+50 años</strong> de experiencia",
+        "text": "Trayectoria comercial como marmolería y aserradero de mármoles y granitos nacionales e importados, siendo importadores directos con presencia en los proyectos más ambiciosos del país."
+      },
+      {
+        "id": "tecnologia",
+        "num": "02",
+        "titleHtml": "<strong>Tecnología</strong> de punta",
+        "text": "Planta industrial de 3.000 m² con maquinaria de última generación para corte, procesamiento y terminaciones. Bajos costos de producción y calidad garantizada."
+      },
+      {
+        "id": "integral",
+        "num": "03",
+        "titleHtml": "Servicio <strong>integral</strong>",
+        "text": "Medición y seguimiento de obra. Colocación con personal calificado. Trato personalizado y acompañamiento desde el diseño hasta la entrega final."
+      },
+      {
+        "id": "oficiales",
+        "num": "04",
+        "titleHtml": "Representantes <strong>oficiales</strong>",
+        "text": "Únicos distribuidores de las principales marcas del mundo: Caesarstone, Silestone, Dekton, Neolith, Laminam e Intecstone. Garantía de autenticidad y soporte técnico."
+      },
+      {
+        "id": "alto-impacto",
+        "num": "05",
+        "titleHtml": "Proyectos de <strong>alto impacto</strong>",
+        "text": "Participamos en los proyectos más emblemáticos de Buenos Aires: Faena Hotel, Hilton, Unicenter, Quartier Madero, Galicia Green Building, Teknopark y muchos más."
+      },
+      {
+        "id": "nacional",
+        "num": "06",
+        "titleHtml": "Distribución <strong>nacional</strong>",
+        "text": "Red de distribución que cubre todo el territorio argentino. Stock permanente para entrega inmediata. Logística coordinada para que tu proyecto no se detenga."
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "Catálogo",
+    "title": "Nuestros materiales",
+    "desc": "Desde el mármol clásico hasta la porcelana técnica más avanzada. Importadores directos y representantes oficiales de las mejores marcas del mundo.",
+    "items": [
+      {
+        "id": "caesarstone",
+        "featured": true,
+        "name": "Caesarstone Sinterizado",
+        "tag": "Representante Oficial · 11 modelos en stock",
+        "ctaLabel": "Ver catálogo",
+        "href": "index.html",
+        "img": {
+          "src": "assets/minerafame/featured-caesarstone.jpg",
+          "alt": "Caesarstone"
+        }
+      },
+      {
+        "id": "cuarzo",
+        "featured": false,
+        "name": "Cuarzo",
+        "tag": "",
+        "ctaLabel": "Consultar",
+        "href": "#contacto",
+        "materialAttr": "Cuarzo",
+        "img": {
+          "src": "assets/minerafame/material-cuarzo.jpg",
+          "alt": "Cuarzo"
+        }
+      },
+      {
+        "id": "cuarcita",
+        "featured": false,
+        "name": "Cuarcita",
+        "tag": "",
+        "ctaLabel": "Consultar",
+        "href": "#contacto",
+        "materialAttr": "Cuarcita",
+        "img": {
+          "src": "assets/minerafame/material-cuarcita.jpg",
+          "alt": "Cuarcita"
+        }
+      },
+      {
+        "id": "travertino",
+        "featured": false,
+        "name": "Travertino",
+        "tag": "",
+        "ctaLabel": "Consultar",
+        "href": "#contacto",
+        "materialAttr": "Travertino",
+        "img": {
+          "src": "assets/minerafame/material-travertino.jpg",
+          "alt": "Travertino"
+        }
+      },
+      {
+        "id": "marmol",
+        "featured": false,
+        "name": "Mármol",
+        "tag": "",
+        "ctaLabel": "Consultar",
+        "href": "#contacto",
+        "materialAttr": "Mármol importado",
+        "img": {
+          "src": "assets/minerafame/material-marmol.jpg",
+          "alt": "Mármol"
+        }
+      },
+      {
+        "id": "granito",
+        "featured": false,
+        "name": "Granito",
+        "tag": "",
+        "ctaLabel": "Consultar",
+        "href": "#contacto",
+        "materialAttr": "Granito",
+        "img": {
+          "src": "assets/minerafame/material-granito.jpg",
+          "alt": "Granito"
+        }
+      }
+    ],
+    "showAllLabel": "Ver todos los materiales",
+    "showAllUrl": "materiales.html"
+  },
+  "fachada": {
+    "img": {
+      "src": "assets/minerafame/material-fachada-ventilada.jpg",
+      "alt": "Fachada ventilada con travertino"
+    },
+    "eyebrow": "Novedad",
+    "title": "Fachada Ventilada",
+    "paragraphs": [
+      "Su sistema constructivo permite la fijación del revestimiento independiente a la hoja de cerramiento. La separación del revestimiento respecto al cerramiento permite alojar una capa aislante con las ventajas que esto supone en ahorro energético.",
+      "Las placas se colocan con junta perimetral, que evita cualquier tipo de patología derivada de la dilatación del material, preservando su buen aspecto y protegiendo el edificio de la incidencia directa del sol."
+    ],
+    "cta": {
+      "label": "Consultar por fachada ventilada",
+      "href": "#contacto"
+    }
+  },
+  "csBanner": {
+    "eyebrow": "Representante oficial",
+    "title": "Caesarstone Argentina",
+    "desc": "Sinterizado premium con stock inmediato en Buenos Aires. 11 modelos del catálogo global, distribuidos exclusivamente por Minera Fame S.A.",
+    "cta": {
+      "label": "Ver catálogo Caesarstone",
+      "href": "index.html"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Dos sucursales en Buenos Aires",
+    "desc": "Visitanos en Caseros o Pacheco, o escribinos por WhatsApp.",
+    "infoTitle": "Minera Fame S.A.",
+    "locations": [
+      {
+        "id": "caseros",
+        "label": "Casa Central — Caseros",
+        "address": "Puán 5403, Caseros, Buenos Aires, Argentina",
+        "phone": "+54 11 3174-9906",
+        "phoneHref": "tel:+541131749906"
+      },
+      {
+        "id": "pacheco",
+        "label": "Sucursal — Ricardo Rojas (Pacheco)",
+        "address": "Quirno Costa 6345, Ricardo Rojas (Pacheco), Buenos Aires, Argentina",
+        "phone": "+54 11 3583-6485",
+        "phoneHref": "tel:+541135836485"
+      }
+    ],
+    "channels": [
+      {
+        "id": "whatsapp",
+        "icon": "whatsapp",
+        "label": "WhatsApp",
+        "value": "+54 11 5931-1038",
+        "href": "https://wa.me/5491159311038"
+      },
+      {
+        "id": "email",
+        "icon": "mail",
+        "label": "Email",
+        "value": "info@minerafame.com",
+        "href": "mailto:info@minerafame.com"
+      }
+    ],
+    "hours": {
+      "label": "Horarios",
+      "value": "Lunes a viernes, 8:00 – 17:00 hs"
+    },
+    "socials": [
+      {
+        "id": "instagram",
+        "icon": "instagram",
+        "href": "https://www.instagram.com/marmoleriaminerafame/"
+      },
+      {
+        "id": "facebook",
+        "icon": "facebook",
+        "href": "https://www.facebook.com/MineraFame"
+      },
+      {
+        "id": "whatsapp",
+        "icon": "whatsapp",
+        "href": "https://wa.me/5491159311038"
+      }
+    ],
+    "form": {
+      "action": "https://formspree.io/f/FORMSPREE_ID",
+      "fallbackEmail": "info@minerafame.com",
+      "subjects": [
+        "Solicitar muestra",
+        "Consulta por proyecto",
+        "Información técnica",
+        "Cotización",
+        "Otro"
+      ],
+      "materialOptions": [
+        "Caesarstone Sinterizado",
+        "Cuarzo",
+        "Cuarcita",
+        "Travertino",
+        "Mármol",
+        "Granito",
+        "Fachada Ventilada",
+        "Otro"
+      ]
+    },
+    "maps": [
+      {
+        "id": "caseros",
+        "label": "Casa Central — Caseros",
+        "embedQuery": "Puan+5403,+Caseros,+Buenos+Aires",
+        "directionsHref": "https://www.google.com/maps/dir/?api=1&destination=Puan+5403,+Caseros,+Buenos+Aires",
+        "directionsLabel": "Cómo llegar"
+      },
+      {
+        "id": "pacheco",
+        "label": "Sucursal — Pacheco",
+        "embedQuery": "Quirno+Costa+6345,+Ricardo+Rojas,+Pacheco,+Buenos+Aires",
+        "directionsHref": "https://www.google.com/maps/dir/?api=1&destination=Quirno+Costa+6345,+Ricardo+Rojas,+Pacheco",
+        "directionsLabel": "Cómo llegar"
+      }
+    ]
+  },
+  "footer": {
+    "logo": {
+      "src": "assets/logos/minera-fame.png",
+      "alt": "Minera Fame S.A."
+    },
+    "taglineHtml": "Empresa marmolera con más de 50 años en Argentina.<br>Representante oficial de Caesarstone, Silestone, Dekton y Neolith.",
+    "copy": "© 2026 Minera Fame S.A. — Representante oficial Caesarstone Argentina",
+    "socials": [
+      {
+        "id": "instagram",
+        "icon": "instagram",
+        "href": "https://www.instagram.com/marmoleriaminerafame/"
+      },
+      {
+        "id": "facebook",
+        "icon": "facebook",
+        "href": "https://www.facebook.com/MineraFame"
+      },
+      {
+        "id": "whatsapp",
+        "icon": "whatsapp",
+        "href": "https://wa.me/5491159311038"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>CMS · Minera Fame</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="admin/css/admin.css">
+  <script>
+    window.ADMIN_CONFIG = {
+      SITE: 'mf',
+      SITE_NAME: 'Minera Fame',
+      WORKER_URL: 'https://caesarstone-cms.pelasonny.workers.dev',
+      SCHEMA_URL: 'admin/schema/mf.json'
+    };
+  </script>
+</head>
+<body data-view="login">
+
+<main id="view-login" class="view">
+  <form class="login-card" id="login-form" autocomplete="off">
+    <h1 class="login-title">Minera Fame · CMS</h1>
+    <label>Usuario
+      <input type="text" name="user" required autocomplete="username" autofocus>
+    </label>
+    <label>Contraseña
+      <div class="pw-wrap">
+        <input type="password" name="pass" required autocomplete="current-password">
+        <button type="button" class="pw-toggle">Ver</button>
+      </div>
+    </label>
+    <button type="submit" class="btn-primary">Entrar</button>
+    <p class="login-error" role="alert" hidden></p>
+  </form>
+</main>
+
+<div id="view-editor" class="view">
+  <header class="topbar">
+    <div class="topbar-brand">CMS</div>
+    <div class="topbar-status">
+      <span class="dirty-count" hidden>Cambios pendientes: <b>0</b></span>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn-ghost" id="btn-logout">Logout</button>
+      <button class="btn-primary" id="btn-save" disabled>Guardar cambios</button>
+    </div>
+  </header>
+
+  <div class="editor-layout">
+    <aside class="sidebar">
+      <nav id="section-nav"></nav>
+    </aside>
+    <main class="editor-main" id="editor-main"></main>
+  </div>
+
+  <footer class="editor-footer">
+    <button class="btn-ghost" id="btn-reload">Recargar contenido (descarta cambios)</button>
+    <span>Última edición: <time id="last-edit-time">—</time></span>
+  </footer>
+</div>
+
+<div id="view-mobile-gate" class="view">
+  <div class="mobile-gate">
+    <h1>CMS · Solo desktop</h1>
+    <p>Este panel requiere una pantalla mínima de 1024px.<br>Usá una laptop o desktop.</p>
+  </div>
+</div>
+
+<div id="toasts" aria-live="polite"></div>
+<div id="modal-root"></div>
+
+<script src="admin/js/admin-utils.js"></script>
+<script src="admin/js/admin-upload.js"></script>
+<script src="admin/js/admin-render.js"></script>
+<script src="admin/js/admin-core.js"></script>
+</body>
+</html>

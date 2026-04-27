@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "site": "mf",
+  "groups": [
+    { "id": "identidad",  "label": "Identidad de la marca",   "sections": ["header"] },
+    { "id": "principal",  "label": "Lo primero que ven",      "sections": ["hero", "stats", "empresa", "materials"] },
+    { "id": "secundario", "label": "Otras secciones",         "sections": ["fachada", "csBanner"] },
+    { "id": "contacto",   "label": "Contacto y pie",          "sections": ["contact", "footer"] }
+  ],
+  "sections": [
+    {
+      "id": "header",
+      "label": "Header (arriba de todo)",
+      "icon": "🏷️",
+      "fields": [
+        { "path": "documentTitle",        "type": "text",     "label": "Título que aparece en la pestaña del navegador", "description": "Texto chiquito arriba del navegador y en Google.", "maxLength": 120 },
+        { "path": "ribbon.label",         "type": "text",     "label": "Texto del cartel finito de arriba (sobre el header)" },
+        { "path": "ribbon.primaryLink.label","type": "text",  "label": "Texto del link destacado del ribbon" },
+        { "path": "ribbon.primaryLink.href", "type": "href",  "label": "Adónde lleva el link del ribbon" },
+        { "path": "ribbon.brands",        "type": "text",     "label": "Marcas listadas en la barra superior", "description": "Separadas por punto (·)" },
+        { "path": "header.logo.src",      "type": "imageSrc", "label": "Logo arriba a la izquierda" },
+        { "path": "header.logo.alt",      "type": "text",     "label": "Descripción del logo (accesibilidad)" },
+        {
+          "path": "header.nav",
+          "type": "array",
+          "label": "Nav links",
+          "summary": "label",
+          "itemLabel": "Link",
+          "itemSchema": [
+            { "path": "id",    "type": "text", "label": "ID" },
+            { "path": "label", "type": "text", "label": "Label" },
+            { "path": "href",  "type": "href", "label": "Href" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "label": "Hero — slider grande de la home",
+      "icon": "🎬",
+      "fields": [
+        {
+          "path": "hero.slides",
+          "type": "array",
+          "label": "Slides del Hero",
+          "summary": "id",
+          "itemLabel": "Slide",
+          "minItems": 1,
+          "itemSchema": [
+            { "path": "id",         "type": "text",      "label": "ID slug" },
+            { "path": "kind",       "type": "text",      "label": "Tipo (video|image)" },
+            { "path": "videoUrl",   "type": "text",      "label": "Video URL" },
+            { "path": "videoTitle", "type": "text",      "label": "Video title" },
+            { "path": "posterImg",  "type": "imageSrc",  "label": "Imagen poster/fallback" },
+            { "path": "posterAlt",  "type": "text",      "label": "Alt imagen" },
+            { "path": "logoImg",    "type": "imageSrc",  "label": "Logo overlay (opcional)" },
+            { "path": "eyebrow",    "type": "text",      "label": "Eyebrow" },
+            { "path": "titleHtml",  "type": "text-html", "label": "Título (br/strong)" },
+            { "path": "subHtml",    "type": "text-html", "label": "Subtítulo" },
+            { "path": "primaryCta.label", "type": "text", "label": "CTA primario — texto" },
+            { "path": "primaryCta.href",  "type": "href", "label": "CTA primario — link" },
+            { "path": "secondaryCta.label","type": "text","label": "CTA secundario — texto" },
+            { "path": "secondaryCta.href", "type": "href","label": "CTA secundario — link" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stats",
+      "label": "Stats bar (números grandes)",
+      "icon": "📊",
+      "fields": [
+        {
+          "path": "statsBar",
+          "type": "array",
+          "label": "Stats",
+          "summary": "label",
+          "itemSchema": [
+            { "path": "id",     "type": "text",   "label": "ID" },
+            { "path": "count",  "type": "number", "label": "Count" },
+            { "path": "suffix", "type": "text",   "label": "Suffix" },
+            { "path": "label",  "type": "text",   "label": "Label" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empresa",
+      "label": "Empresa — quiénes somos",
+      "icon": "🏢",
+      "fields": [
+        { "path": "empresa.logo.src", "type": "imageSrc", "label": "Logo Minera Fame" },
+        { "path": "empresa.logo.alt", "type": "text",     "label": "Alt logo" },
+        { "path": "empresa.eyebrow",  "type": "text",     "label": "Eyebrow" },
+        { "path": "empresa.title",    "type": "text",     "label": "Título" },
+        {
+          "path": "empresa.paragraphs",
+          "type": "array",
+          "label": "Párrafos",
+          "itemLabel": "Párrafo",
+          "itemSchema": { "type": "text-multiline", "label": "Texto", "maxLength": 600 }
+        },
+        {
+          "path": "empresa.features",
+          "type": "array",
+          "label": "Features (✓)",
+          "itemLabel": "Feature",
+          "itemSchema": { "type": "text", "label": "Texto" }
+        },
+        { "path": "empresa.cta.label", "type": "text", "label": "CTA — texto" },
+        { "path": "empresa.cta.href",  "type": "href", "label": "CTA — link" },
+        {
+          "path": "empresa.differentials",
+          "type": "array",
+          "label": "Diferenciadores (6)",
+          "summary": "id",
+          "itemLabel": "Item",
+          "itemSchema": [
+            { "path": "id",        "type": "text",      "label": "ID" },
+            { "path": "num",       "type": "text",      "label": "Número (01..06)" },
+            { "path": "titleHtml", "type": "text-html", "label": "Título (br/strong)" },
+            { "path": "text",      "type": "text-multiline", "label": "Texto" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "materials",
+      "label": "Materiales — catálogo",
+      "icon": "🪨",
+      "fields": [
+        { "path": "materials.eyebrow", "type": "text", "label": "Eyebrow" },
+        { "path": "materials.title",   "type": "text", "label": "Título" },
+        { "path": "materials.desc",    "type": "text-multiline", "label": "Descripción" },
+        { "path": "materials.showAllLabel", "type": "text", "label": "CTA 'Ver todos' — texto (visible cuando hay >6 items)" },
+        { "path": "materials.showAllUrl",   "type": "href", "label": "CTA 'Ver todos' — destino (default: materiales.html)" },
+        {
+          "path": "materials.items",
+          "type": "array",
+          "label": "Cards de materiales",
+          "summary": "name",
+          "itemLabel": "Material",
+          "itemSchema": [
+            { "path": "id",            "type": "text",     "label": "ID" },
+            { "path": "name",          "type": "text",     "label": "Nombre" },
+            { "path": "tag",           "type": "text",     "label": "Tag (opcional)" },
+            { "path": "ctaLabel",      "type": "text",     "label": "CTA texto" },
+            { "path": "href",          "type": "href",     "label": "Href" },
+            { "path": "materialAttr",  "type": "text",     "label": "data-material attr" },
+            { "path": "img.src",       "type": "imageSrc", "label": "Imagen" },
+            { "path": "img.alt",       "type": "text",     "label": "Alt imagen" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fachada",
+      "label": "Fachada Ventilada",
+      "icon": "🧱",
+      "fields": [
+        { "path": "fachada.img.src",  "type": "imageSrc", "label": "Imagen" },
+        { "path": "fachada.img.alt",  "type": "text",     "label": "Alt" },
+        { "path": "fachada.eyebrow",  "type": "text",     "label": "Eyebrow" },
+        { "path": "fachada.title",    "type": "text",     "label": "Título" },
+        {
+          "path": "fachada.paragraphs",
+          "type": "array",
+          "label": "Párrafos",
+          "itemLabel": "Párrafo",
+          "itemSchema": { "type": "text-multiline", "label": "Texto" }
+        },
+        { "path": "fachada.cta.label","type": "text", "label": "CTA texto" },
+        { "path": "fachada.cta.href", "type": "href", "label": "CTA link" }
+      ]
+    },
+    {
+      "id": "csBanner",
+      "label": "Banner Caesarstone (sección oscura)",
+      "icon": "✨",
+      "fields": [
+        { "path": "csBanner.eyebrow",  "type": "text", "label": "Eyebrow" },
+        { "path": "csBanner.title",    "type": "text", "label": "Título" },
+        { "path": "csBanner.desc",     "type": "text-multiline", "label": "Descripción" },
+        { "path": "csBanner.cta.label","type": "text", "label": "CTA texto" },
+        { "path": "csBanner.cta.href", "type": "href", "label": "CTA link" }
+      ]
+    },
+    {
+      "id": "contact",
+      "label": "Contacto",
+      "icon": "📞",
+      "fields": [
+        { "path": "contact.eyebrow",   "type": "text", "label": "Eyebrow" },
+        { "path": "contact.title",     "type": "text", "label": "Título" },
+        { "path": "contact.desc",      "type": "text-multiline", "label": "Descripción" },
+        { "path": "contact.infoTitle", "type": "text", "label": "Empresa" },
+        {
+          "path": "contact.locations",
+          "type": "array",
+          "label": "Ubicaciones",
+          "summary": "label",
+          "itemSchema": [
+            { "path": "id",        "type": "text", "label": "ID" },
+            { "path": "label",     "type": "text", "label": "Label" },
+            { "path": "address",   "type": "text-multiline", "label": "Dirección" },
+            { "path": "phone",     "type": "text", "label": "Teléfono visible" },
+            { "path": "phoneHref", "type": "text", "label": "Teléfono href" }
+          ]
+        },
+        {
+          "path": "contact.channels",
+          "type": "array",
+          "label": "Canales",
+          "summary": "label",
+          "itemSchema": [
+            { "path": "id",    "type": "text", "label": "ID" },
+            { "path": "icon",  "type": "text", "label": "Icon" },
+            { "path": "label", "type": "text", "label": "Label" },
+            { "path": "value", "type": "text", "label": "Valor visible" },
+            { "path": "href",  "type": "href", "label": "Href" }
+          ]
+        },
+        { "path": "contact.hours.label", "type": "text", "label": "Horario — label" },
+        { "path": "contact.hours.value", "type": "text", "label": "Horario — valor" },
+        { "path": "contact.form.action", "type": "href", "label": "Form action (Formspree)" },
+        { "path": "contact.form.fallbackEmail","type": "text", "label": "Email fallback" },
+        {
+          "path": "contact.form.materialOptions",
+          "type": "array",
+          "label": "Form — opciones de material",
+          "itemSchema": { "type": "text", "label": "Material" }
+        },
+        {
+          "path": "contact.form.subjects",
+          "type": "array",
+          "label": "Form — opciones de motivo",
+          "itemSchema": { "type": "text", "label": "Motivo" }
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "label": "Footer (pie del sitio)",
+      "icon": "📄",
+      "fields": [
+        { "path": "footer.logo.src",     "type": "imageSrc",  "label": "Logo" },
+        { "path": "footer.logo.alt",     "type": "text",      "label": "Alt logo" },
+        { "path": "footer.taglineHtml",  "type": "text-html", "label": "Tagline (br permitido)" },
+        { "path": "footer.copy",         "type": "text",      "label": "Copyright" }
+      ]
+    }
+  ]
+}

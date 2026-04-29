@@ -4,12 +4,12 @@
   const { hashBlob, blobToBase64, sluggify } = window.adminUtils;
 
   const ALLOWED = ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'];
-  const MAX_BYTES = 2 * 1024 * 1024;
+  const MAX_BYTES = 15 * 1024 * 1024;
   const MAX_WIDTH = 2400;
 
   function validateImage(file) {
     if (!ALLOWED.includes(file.type)) return 'Formato no soportado (jpg, png, webp, svg)';
-    if (file.size > MAX_BYTES && file.type !== 'image/svg+xml') return 'Máximo 2MB';
+    if (file.size > MAX_BYTES && file.type !== 'image/svg+xml') return 'Máximo 15MB';
     return null;
   }
 

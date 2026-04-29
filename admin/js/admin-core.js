@@ -364,7 +364,7 @@
     TOKEN_MISSING: 'Sesión inválida. Recargá la página.',
     INVALID_TOKEN: 'Sesión inválida. Volvé a entrar.',
     STALE_SHA: 'Otro cambio se guardó antes. Recargá el contenido y volvé a intentar.',
-    IMAGE_TOO_LARGE: 'La imagen pesa más de 2 MB. Comprimila o usá una más chica.',
+    IMAGE_TOO_LARGE: 'La imagen pesa más de 15 MB. Comprimila o usá una más chica.',
     INVALID_MIME: 'Formato no soportado. Usá JPG, PNG, WebP o SVG.',
     INVALID_BODY: 'Algo en el formulario no es válido. Revisá los campos.',
     GH_API_ERROR: 'No pudimos guardar en el servidor. Probá de nuevo en un minuto.',

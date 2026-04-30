@@ -224,7 +224,13 @@
           "src": "assets/minerafame/featured-caesarstone.jpg",
           "alt": "Caesarstone"
         },
-        "gallery": []
+        "gallery": [
+          {
+            "src": "assets/uploads/mf/20260430-181636-caesarstone.webp",
+            "alt": "asdasd",
+            "caption": "asdasd"
+          }
+        ]
       },
       {
         "id": "cuarzo-copia",

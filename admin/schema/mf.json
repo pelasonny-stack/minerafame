@@ -148,7 +148,18 @@
             { "path": "href",          "type": "href",     "label": "Href" },
             { "path": "materialAttr",  "type": "text",     "label": "data-material attr" },
             { "path": "img.src",       "type": "imageSrc", "label": "Imagen" },
-            { "path": "img.alt",       "type": "text",     "label": "Alt imagen" }
+            { "path": "img.alt",       "type": "text",     "label": "Alt imagen" },
+            {
+              "path": "gallery",
+              "type": "array",
+              "label": "Galería extra de fotos (carrusel)",
+              "itemLabel": "Foto",
+              "itemSchema": [
+                { "path": "src",     "type": "imageSrc", "label": "Imagen" },
+                { "path": "alt",     "type": "text",     "label": "Descripción para accesibilidad" },
+                { "path": "caption", "type": "text",     "label": "Subtítulo visible debajo de la foto" }
+              ]
+            }
           ]
         }
       ]

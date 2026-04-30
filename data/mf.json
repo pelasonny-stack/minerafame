@@ -240,14 +240,14 @@
         },
         "gallery": [
           {
-            "src": "assets/uploads/mf/20260430-162741-cuarzo-bianco-carrara-6.webp",
-            "alt": "",
-            "caption": "Cuarzo Bianco Carrara"
-          },
-          {
             "src": "assets/uploads/mf/20260430-162745-cuarzo-calacatta-venato-14.webp",
             "alt": "",
             "caption": "Cuarzo Calacatta Venato "
+          },
+          {
+            "src": "assets/uploads/mf/20260430-162741-cuarzo-bianco-carrara-6.webp",
+            "alt": "",
+            "caption": "Cuarzo Bianco Carrara"
           }
         ]
       },

@@ -263,7 +263,18 @@
           "src": "assets/minerafame/material-cuarcita.jpg",
           "alt": "Cuarcita"
         },
-        "gallery": []
+        "gallery": [
+          {
+            "src": "assets/uploads/mf/20260430-170833-fc4395d1-ad38-4167-b0b0-50262789abb7-4.jpg",
+            "alt": "",
+            "caption": "Crystallo"
+          },
+          {
+            "src": "assets/uploads/mf/20260430-170835-a1177d42-4f6e-491a-8b1d-14a50e74c428-4.jpg",
+            "alt": "",
+            "caption": "Crystallo Estatuario"
+          }
+        ]
       },
       {
         "id": "travertino",

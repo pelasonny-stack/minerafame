@@ -226,15 +226,15 @@
         }
       },
       {
-        "id": "cuarzo",
+        "id": "cuarzo-copia",
         "featured": false,
         "name": "Cuarzo",
         "tag": "",
         "ctaLabel": "Consultar",
         "href": "#contacto",
-        "materialAttr": "Cuarzo",
+        "materialAttr": "Cuarzos",
         "img": {
-          "src": "assets/minerafame/material-cuarzo.jpg",
+          "src": "assets/uploads/mf/20260430-121244-intecstone-calacatta-concrete-6.webp",
           "alt": "Cuarzo"
         }
       },

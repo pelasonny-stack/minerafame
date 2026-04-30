@@ -223,7 +223,8 @@
         "img": {
           "src": "assets/minerafame/featured-caesarstone.jpg",
           "alt": "Caesarstone"
-        }
+        },
+        "gallery": []
       },
       {
         "id": "cuarzo-copia",
@@ -236,7 +237,19 @@
         "img": {
           "src": "assets/uploads/mf/20260430-121244-intecstone-calacatta-concrete-6.webp",
           "alt": "Cuarzo"
-        }
+        },
+        "gallery": [
+          {
+            "src": "assets/uploads/mf/20260430-162741-cuarzo-bianco-carrara-6.webp",
+            "alt": "",
+            "caption": "Cuarzo Bianco Carrara"
+          },
+          {
+            "src": "assets/uploads/mf/20260430-162745-cuarzo-calacatta-venato-14.webp",
+            "alt": "",
+            "caption": "Cuarzo Calacatta Venato "
+          }
+        ]
       },
       {
         "id": "cuarcita",
@@ -249,7 +262,8 @@
         "img": {
           "src": "assets/minerafame/material-cuarcita.jpg",
           "alt": "Cuarcita"
-        }
+        },
+        "gallery": []
       },
       {
         "id": "travertino",
@@ -262,7 +276,8 @@
         "img": {
           "src": "assets/minerafame/material-travertino.jpg",
           "alt": "Travertino"
-        }
+        },
+        "gallery": []
       },
       {
         "id": "marmol",
@@ -275,7 +290,8 @@
         "img": {
           "src": "assets/minerafame/material-marmol.jpg",
           "alt": "Mármol"
-        }
+        },
+        "gallery": []
       },
       {
         "id": "granito",
@@ -288,7 +304,8 @@
         "img": {
           "src": "assets/minerafame/material-granito.jpg",
           "alt": "Granito"
-        }
+        },
+        "gallery": []
       }
     ],
     "showAllLabel": "Ver todos los materiales",

@@ -28,6 +28,12 @@ body {
   transition: background var(--dur-med) ease,
               box-shadow var(--dur-med) ease,
               transform var(--dur-med) var(--ease-out);
+  pointer-events: none;
+}
+
+.mf-header-ribbon,
+.mf-header-main {
+  pointer-events: auto;
 }
 
 .mf-header-ribbon {

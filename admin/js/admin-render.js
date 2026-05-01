@@ -428,7 +428,16 @@
       thumb.alt = label || '';
       thumbMeta.textContent = label || '(sin imagen)';
     };
-    renderThumb(value || '', value || '');
+    const resolveThumbSrc = (v) => {
+      if (typeof v === 'string' && v.startsWith('pending:')) {
+        const uploadId = v.slice('pending:'.length);
+        const blob = stateRef.pendingPreviews && stateRef.pendingPreviews[uploadId];
+        return { src: blob || '', label: blob ? '(imagen pendiente — se sube al guardar)' : '(imagen pendiente — sin preview)' };
+      }
+      return { src: v || '', label: v || '(sin imagen)' };
+    };
+    const initial = resolveThumbSrc(value);
+    renderThumb(initial.src, initial.label);
 
     const blobs = new Set();
     const trackBlob = (url) => { blobs.add(url); return url; };
@@ -535,9 +544,12 @@
       const file = f._candidateFile;
       if (!file) return;
       const uploadId = crypto.randomUUID();
+      const blobUrl = trackBlob(URL.createObjectURL(file));
       setAtPath(stateRef.currentContent, fullPath, `pending:${uploadId}`);
       stateRef.pendingUploads.push({ uploadId, file, path: fullPath });
-      renderThumb(trackBlob(URL.createObjectURL(file)), `(pendiente) ${file.name}`);
+      if (!stateRef.pendingPreviews) stateRef.pendingPreviews = {};
+      stateRef.pendingPreviews[uploadId] = blobUrl;
+      renderThumb(blobUrl, `(pendiente) ${file.name}`);
       newPrev.hidden = true;
       f._candidateFile = null;
       markDirty(fullPath, f);
@@ -600,13 +612,28 @@
     for (const f of itemSchema) {
       if (f.type === 'imageSrc') {
         const v = item[f.path];
-        if (typeof v === 'string' && v && !v.startsWith('pending:')) return v;
+        if (typeof v !== 'string' || !v) continue;
+        if (v.startsWith('pending:')) {
+          const uploadId = v.slice('pending:'.length);
+          const blob = stateRef.pendingPreviews && stateRef.pendingPreviews[uploadId];
+          if (blob) return blob;
+          continue;
+        }
+        return v;
       }
       if (f.type === 'array') continue;
       // nested obj like img.src
       if (f.path?.includes('.')) {
         const [k1, k2] = f.path.split('.');
-        if (k2 === 'src' && item[k1]?.src) return item[k1].src;
+        const subVal = item[k1]?.[k2];
+        if (k2 === 'src' && subVal) {
+          if (typeof subVal === 'string' && subVal.startsWith('pending:')) {
+            const uploadId = subVal.slice('pending:'.length);
+            const blob = stateRef.pendingPreviews && stateRef.pendingPreviews[uploadId];
+            return blob || null;
+          }
+          return subVal;
+        }
       }
     }
     return null;

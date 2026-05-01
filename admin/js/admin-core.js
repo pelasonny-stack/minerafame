@@ -33,6 +33,7 @@
     currentContent: null,
     sha: null,
     pendingUploads: [],   // [{uploadId, file, path}]
+    pendingPreviews: {},  // {uploadId: blobUrl}
     uploadedHashes: {},
     dirtyPaths: new Set(),
   };
@@ -135,6 +136,7 @@
     renderUI();
     state.dirtyPaths.clear();
     state.pendingUploads = [];
+    state.pendingPreviews = {};
     updateDirtyUI();
     toast('info', 'Contenido recargado');
   });
@@ -292,6 +294,7 @@
           state.currentContent = draft.currentContent;
           state.dirtyPaths = new Set(draft.dirtyPaths || []);
           state.pendingUploads = []; // archivos no se persisten
+          state.pendingPreviews = {};
           renderUI();
           updateDirtyUI();
           toast('info', 'Cambios recuperados (sin imágenes pendientes)');
@@ -462,6 +465,8 @@
         replacePlaceholderInContent(`pending:${u.uploadId}`, result.path);
       }
       state.pendingUploads = [];
+      Object.values(state.pendingPreviews).forEach(u => URL.revokeObjectURL(u));
+      state.pendingPreviews = {};
 
       // Phase 2: POST content
       refs.btnSave.textContent = 'Guardando contenido…';

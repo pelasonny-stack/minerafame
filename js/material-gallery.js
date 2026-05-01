@@ -94,13 +94,11 @@
   }
 
   function initGalleries(data) {
-    var cards = document.querySelectorAll('[data-edit-bind-href^="materials.items["]');
+    var items = (data.materials && data.materials.items) || [];
+    var cards = document.querySelectorAll('.mf-materials-grid .mf-material-card');
     var built = 0;
-    cards.forEach(function (card) {
-      var m = card.getAttribute('data-edit-bind-href').match(/materials\.items\[(\d+)\]/);
-      if (!m) return;
-      var idx = parseInt(m[1], 10);
-      var item = data.materials && data.materials.items && data.materials.items[idx];
+    cards.forEach(function (card, idx) {
+      var item = items[idx];
       if (!item || !item.gallery || !item.gallery.length) return;
       try {
         buildSlider(card, item);

@@ -2196,14 +2196,25 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
 }
 
 .mf-material-caption {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 4;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.05em;
-  color: rgba(245, 242, 240, 0.85);
-  margin-bottom: 0.5rem;
+  color: rgba(245, 242, 240, 0.95);
+  background: rgba(26, 25, 23, 0.75);
+  padding: 0.4rem 0.7rem;
+  border-radius: 3px;
   opacity: 0;
   transition: opacity var(--dur-med) var(--ease-out);
   text-transform: uppercase;
+  pointer-events: none;
+  max-width: calc(100% - 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 640px) {

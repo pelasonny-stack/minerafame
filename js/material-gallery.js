@@ -31,17 +31,19 @@
     existingImg.insertAdjacentHTML('afterend', swiperHtml);
     existingImg.parentNode.removeChild(existingImg);
 
-    // Inject caption layer into overlay, before .mf-material-name
-    var overlay = card.querySelector('.mf-material-overlay');
-    if (overlay) {
-      var nameEl = overlay.querySelector('.mf-material-name');
-      var captionEl = document.createElement('div');
-      captionEl.className = 'mf-material-caption';
-      captionEl.setAttribute('aria-live', 'polite');
-      if (nameEl) {
-        overlay.insertBefore(captionEl, nameEl);
-      } else {
-        overlay.prepend(captionEl);
+    // Inject caption tag at top-left of card (own background)
+    var captionEl = document.createElement('div');
+    captionEl.className = 'mf-material-caption';
+    captionEl.setAttribute('aria-live', 'polite');
+    card.appendChild(captionEl);
+
+    function updateCaption(swiper) {
+      var slide = swiper.slides[swiper.activeIndex];
+      var caption = (slide && slide.dataset.caption) ? slide.dataset.caption : '';
+      var captionEl = card.querySelector('.mf-material-caption');
+      if (captionEl) {
+        captionEl.textContent = caption;
+        captionEl.style.opacity = caption ? '1' : '0';
       }
     }
 
@@ -64,15 +66,8 @@
         nextSlideMessage: 'Foto siguiente'
       },
       on: {
-        slideChange: function (swiper) {
-          var slide = swiper.slides[swiper.activeIndex];
-          var caption = (slide && slide.dataset.caption) ? slide.dataset.caption : '';
-          var captionEl = card.querySelector('.mf-material-caption');
-          if (captionEl) {
-            captionEl.textContent = caption;
-            captionEl.style.opacity = caption ? '1' : '0';
-          }
-        }
+        init: updateCaption,
+        slideChange: updateCaption
       }
     });
 

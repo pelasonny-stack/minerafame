@@ -94,14 +94,22 @@
   }
 
   function initGalleries(data) {
-    document.querySelectorAll('[data-edit-bind-href^="materials.items["]').forEach(function (card) {
+    var cards = document.querySelectorAll('[data-edit-bind-href^="materials.items["]');
+    var built = 0;
+    cards.forEach(function (card) {
       var m = card.getAttribute('data-edit-bind-href').match(/materials\.items\[(\d+)\]/);
       if (!m) return;
       var idx = parseInt(m[1], 10);
       var item = data.materials && data.materials.items && data.materials.items[idx];
       if (!item || !item.gallery || !item.gallery.length) return;
-      buildSlider(card, item);
+      try {
+        buildSlider(card, item);
+        built++;
+      } catch (err) {
+        console.error('[material-gallery] error en card idx=' + idx, err);
+      }
     });
+    console.log('[material-gallery] cards detectadas=' + cards.length + ' sliders montados=' + built);
   }
 
   document.addEventListener('site-data-ready', function (e) {

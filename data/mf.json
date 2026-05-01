@@ -249,11 +249,6 @@
             "src": "assets/uploads/mf/20260430-162745-cuarzo-calacatta-venato-14.webp",
             "alt": "",
             "caption": "Cuarzo Calacatta Venato "
-          },
-          {
-            "src": "assets/uploads/mf/20260430-162741-cuarzo-bianco-carrara-6.webp",
-            "alt": "",
-            "caption": "Cuarzo Bianco Carrara"
           }
         ]
       },
@@ -294,7 +289,18 @@
           "src": "assets/minerafame/material-travertino.jpg",
           "alt": "Travertino"
         },
-        "gallery": []
+        "gallery": [
+          {
+            "src": "assets/uploads/mf/20260430-170833-fc4395d1-ad38-4167-b0b0-50262789abb7-4.jpg",
+            "alt": "DESCRIPCION",
+            "caption": "SUBTITULO"
+          },
+          {
+            "src": "",
+            "alt": "",
+            "caption": ""
+          }
+        ]
       },
       {
         "id": "marmol",

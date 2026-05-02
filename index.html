@@ -870,6 +870,39 @@
   </div>
 </footer>
 
+<div class="mf-mat-modal" id="mf-mat-modal" role="dialog" aria-modal="true" aria-labelledby="mf-mat-modal-title" hidden>
+  <div class="mf-mat-modal-backdrop"></div>
+  <div class="mf-mat-modal-shell">
+    <button type="button" class="mf-mat-modal-close" id="mf-mat-modal-close" aria-label="Cerrar">&times;</button>
+    <button type="button" class="mf-mat-modal-prev-mat" id="mf-mat-modal-prev-mat" aria-label="Material anterior">&#8249;</button>
+    <button type="button" class="mf-mat-modal-next-mat" id="mf-mat-modal-next-mat" aria-label="Material siguiente">&#8250;</button>
+
+    <div class="mf-mat-modal-hero">
+      <div class="swiper mf-mat-modal-swiper">
+        <div class="swiper-wrapper"></div>
+        <button class="mf-mat-modal-swiper-prev" type="button" aria-label="Foto anterior"></button>
+        <button class="mf-mat-modal-swiper-next" type="button" aria-label="Foto siguiente"></button>
+        <div class="mf-mat-modal-swiper-pagination"></div>
+        <div class="mf-mat-modal-caption" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="mf-mat-modal-body">
+      <div class="mf-mat-modal-eyebrow"></div>
+      <h2 class="mf-mat-modal-title" id="mf-mat-modal-title"></h2>
+      <p class="mf-mat-modal-tag"></p>
+      <p class="mf-mat-modal-desc"></p>
+    </div>
+
+    <div class="mf-mat-modal-footer">
+      <a class="mf-btn-primary mf-mat-modal-cta" href="#contacto">
+        Consultar este material
+        <svg width="16" height="16"><use href="#arrow-right"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- ── SCRIPTS ─────────────────────────────────────────────────────────────── -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js" defer></script>
@@ -877,6 +910,7 @@
 <script src="js/hydrator.js" defer></script>
 <script src="js/minera-fame.js" defer></script>
 <script defer src="js/material-gallery.js"></script>
+<script src="js/material-modal.js"></script>
 
 </body>
 </html>

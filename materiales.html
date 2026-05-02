@@ -103,24 +103,7 @@
   </template>
 </section>
 
-<!-- GALLERY SECTION -->
-<section class="materiales-gallery-section" id="materiales-gallery" aria-labelledby="gallery-title">
-  <div class="materiales-gallery-header">
-    <div class="mf-eyebrow">Galería</div>
-    <h2 class="mf-title" id="gallery-title">Inspiración en materiales</h2>
-    <p class="mf-desc">Fotos reales de los materiales que importamos. Filtrá por tipo arriba para ver solo las que te interesan.</p>
-  </div>
-  <div class="materiales-gallery-grid" id="materiales-gallery-grid"></div>
-  <p class="materiales-gallery-empty" id="materiales-gallery-empty" hidden>Aún no hay fotos cargadas en este filtro.</p>
-</section>
-
 </main>
-
-<!-- Lightbox fullscreen -->
-<div class="materiales-lightbox" id="materiales-lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada" hidden>
-  <button type="button" class="materiales-lightbox-close" id="materiales-lightbox-close" aria-label="Cerrar">×</button>
-  <div class="materiales-lightbox-inner"></div>
-</div>
 
 <!-- STICKY CTA BAR -->
 <aside class="materiales-sticky-cta" aria-label="Solicitar muestra">
@@ -143,7 +126,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/material-gallery.js"></script>
-<script src="js/materiales-gallery.js"></script>
+<script src="js/material-modal.js"></script>
 <script src="js/hydrator.js"></script>
 <script>
   (async () => {
@@ -172,6 +155,39 @@
     });
   })();
 </script>
+
+<div class="mf-mat-modal" id="mf-mat-modal" role="dialog" aria-modal="true" aria-labelledby="mf-mat-modal-title" hidden>
+  <div class="mf-mat-modal-backdrop"></div>
+  <div class="mf-mat-modal-shell">
+    <button type="button" class="mf-mat-modal-close" id="mf-mat-modal-close" aria-label="Cerrar">&times;</button>
+    <button type="button" class="mf-mat-modal-prev-mat" id="mf-mat-modal-prev-mat" aria-label="Material anterior">&#8249;</button>
+    <button type="button" class="mf-mat-modal-next-mat" id="mf-mat-modal-next-mat" aria-label="Material siguiente">&#8250;</button>
+
+    <div class="mf-mat-modal-hero">
+      <div class="swiper mf-mat-modal-swiper">
+        <div class="swiper-wrapper"></div>
+        <button class="mf-mat-modal-swiper-prev" type="button" aria-label="Foto anterior"></button>
+        <button class="mf-mat-modal-swiper-next" type="button" aria-label="Foto siguiente"></button>
+        <div class="mf-mat-modal-swiper-pagination"></div>
+        <div class="mf-mat-modal-caption" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="mf-mat-modal-body">
+      <div class="mf-mat-modal-eyebrow"></div>
+      <h2 class="mf-mat-modal-title" id="mf-mat-modal-title"></h2>
+      <p class="mf-mat-modal-tag"></p>
+      <p class="mf-mat-modal-desc"></p>
+    </div>
+
+    <div class="mf-mat-modal-footer">
+      <a class="mf-btn-primary mf-mat-modal-cta" href="#contacto">
+        Consultar este material
+        <svg width="16" height="16"><use href="#arrow-right"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

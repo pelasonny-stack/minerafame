@@ -103,7 +103,24 @@
   </template>
 </section>
 
+<!-- GALLERY SECTION -->
+<section class="materiales-gallery-section" id="materiales-gallery" aria-labelledby="gallery-title">
+  <div class="materiales-gallery-header">
+    <div class="mf-eyebrow">Galería</div>
+    <h2 class="mf-title" id="gallery-title">Inspiración en materiales</h2>
+    <p class="mf-desc">Fotos reales de los materiales que importamos. Filtrá por tipo arriba para ver solo las que te interesan.</p>
+  </div>
+  <div class="materiales-gallery-grid" id="materiales-gallery-grid"></div>
+  <p class="materiales-gallery-empty" id="materiales-gallery-empty" hidden>Aún no hay fotos cargadas en este filtro.</p>
+</section>
+
 </main>
+
+<!-- Lightbox fullscreen -->
+<div class="materiales-lightbox" id="materiales-lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada" hidden>
+  <button type="button" class="materiales-lightbox-close" id="materiales-lightbox-close" aria-label="Cerrar">×</button>
+  <div class="materiales-lightbox-inner"></div>
+</div>
 
 <!-- STICKY CTA BAR -->
 <aside class="materiales-sticky-cta" aria-label="Solicitar muestra">
@@ -126,6 +143,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/material-gallery.js"></script>
+<script src="js/materiales-gallery.js"></script>
 <script src="js/hydrator.js"></script>
 <script>
   (async () => {

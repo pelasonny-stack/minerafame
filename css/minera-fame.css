@@ -2232,3 +2232,245 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
     bottom: 0.5rem;
   }
 }
+
+/* ── Materiales — Galería masonry ───────────────────────────────────── */
+.materiales-gallery-section {
+  padding: var(--space-12) var(--space-6);
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--c-paper);
+}
+
+.materiales-gallery-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.materiales-gallery-grid {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+@media (max-width: 900px) { .materiales-gallery-grid { column-count: 2; } }
+@media (max-width: 480px) { .materiales-gallery-grid { column-count: 1; } }
+
+.materiales-gallery-tile {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--mf-ash);
+  display: block;
+  border: none;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+.materiales-gallery-tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out), filter 600ms var(--ease-out);
+  filter: contrast(1.04) saturate(1.06);
+}
+
+.materiales-gallery-tile:hover img {
+  transform: scale(1.03);
+  filter: contrast(1.08) saturate(1.12);
+}
+
+.materiales-gallery-tile-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.75rem 1rem 0.85rem;
+  background: linear-gradient(to top, rgba(26,25,23,0.85) 0%, transparent 100%);
+  color: rgba(245,242,240,0.95);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-out);
+}
+
+.materiales-gallery-tile:hover .materiales-gallery-tile-caption,
+.materiales-gallery-tile:focus-visible .materiales-gallery-tile-caption {
+  opacity: 1;
+}
+
+.materiales-gallery-tile-mat {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mf-terracotta);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.materiales-gallery-tile-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.3;
+  display: block;
+}
+
+.materiales-gallery-tile:focus-visible {
+  outline: 2px solid var(--mf-terracotta);
+  outline-offset: 2px;
+}
+
+.materiales-gallery-empty {
+  text-align: center;
+  font-family: var(--font-sans);
+  color: rgba(26,25,23,0.5);
+  padding: var(--space-8);
+}
+
+/* ── Materiales — Lightbox fullscreen ──────────────────────────────── */
+.materiales-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10,10,10,0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms var(--ease-out);
+}
+
+.materiales-lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.materiales-lightbox[hidden] { display: none; }
+
+.materiales-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 200ms;
+}
+
+.materiales-lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.materiales-lightbox-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.materiales-lightbox-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.materiales-lightbox-swiper .swiper-wrapper,
+.materiales-lightbox-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.materiales-lightbox-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.materiales-lightbox-swiper .swiper-slide img {
+  max-width: 100%;
+  max-height: calc(100vh - 200px);
+  object-fit: contain;
+}
+
+.materiales-lightbox-swiper-prev,
+.materiales-lightbox-swiper-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 200ms;
+}
+
+.materiales-lightbox-swiper-prev { left: 20px; }
+.materiales-lightbox-swiper-next { right: 20px; }
+
+.materiales-lightbox-swiper-prev:hover,
+.materiales-lightbox-swiper-next:hover {
+  background: rgba(0,0,0,0.85);
+}
+
+.materiales-lightbox-swiper-prev::before,
+.materiales-lightbox-swiper-next::before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+.materiales-lightbox-swiper-prev::before { transform: rotate(-135deg); margin-left: 4px; }
+.materiales-lightbox-swiper-next::before { transform: rotate(45deg); margin-right: 4px; }
+
+.materiales-lightbox-caption {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  max-width: 700px;
+}
+
+.materiales-lightbox-caption-mat {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mf-terracotta);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .materiales-lightbox {
+    padding: 50px 10px 60px;
+  }
+  .materiales-lightbox-swiper-prev,
+  .materiales-lightbox-swiper-next {
+    width: 40px; height: 40px;
+  }
+}

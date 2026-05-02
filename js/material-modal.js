@@ -24,11 +24,6 @@
     const items = getItems();
     const item = items[idx];
     if (!item) return;
-    if (isExternalFeatured(item)) {
-      // Featured Caesarstone: dejar que el link navegue (no abrir modal)
-      window.location.href = item.href;
-      return;
-    }
     currentIdx = idx;
     renderModal(item);
 
@@ -92,10 +87,23 @@
     modal.querySelector('.mf-mat-modal-desc').textContent = desc;
     modal.querySelector('.mf-mat-modal-desc').style.display = desc ? '' : 'none';
 
-    // CTA con material attr para prefill
+    // CTA dinámico: si href external (Caesarstone), va al sitio. Si no, a #contacto con prefill.
     const cta = modal.querySelector('.mf-mat-modal-cta');
+    const ctaLabel = cta?.querySelector('.mf-mat-modal-cta-label');
     if (cta) {
-      cta.setAttribute('data-material', item.materialAttr || item.name || '');
+      if (isExternalFeatured(item)) {
+        cta.setAttribute('href', item.href);
+        cta.setAttribute('target', '_blank');
+        cta.setAttribute('rel', 'noopener');
+        cta.removeAttribute('data-material');
+        if (ctaLabel) ctaLabel.textContent = `Ver sitio ${item.name}`;
+      } else {
+        cta.setAttribute('href', '#contacto');
+        cta.removeAttribute('target');
+        cta.removeAttribute('rel');
+        cta.setAttribute('data-material', item.materialAttr || item.name || '');
+        if (ctaLabel) ctaLabel.textContent = 'Consultar este material';
+      }
     }
 
     // Init Swiper
@@ -146,12 +154,8 @@
   }
 
   function findAdjIdx(items, fromIdx, dir) {
-    let i = fromIdx + dir;
-    while (i >= 0 && i < items.length) {
-      if (!isExternalFeatured(items[i])) return i;
-      i += dir;
-    }
-    return null;
+    const i = fromIdx + dir;
+    return (i >= 0 && i < items.length) ? i : null;
   }
 
   function goAdj(dir) {
@@ -178,9 +182,6 @@
         const items = getItems();
         const item = items[idx];
         if (!item) return;
-
-        // Featured con link externo: dejar comportamiento default (navegar)
-        if (isExternalFeatured(item)) return;
 
         e.preventDefault();
         openModal(idx);

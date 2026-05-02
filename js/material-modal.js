@@ -98,7 +98,9 @@
         cta.removeAttribute('data-material');
         if (ctaLabel) ctaLabel.textContent = `Ver sitio ${item.name}`;
       } else {
-        cta.setAttribute('href', '#contacto');
+        // path absoluto para que funcione desde materiales.html (que no tiene #contacto local)
+        const onHome = /\/(index\.html)?$/.test(location.pathname) || location.pathname === '/';
+        cta.setAttribute('href', onHome ? '#contacto' : '/#contacto');
         cta.removeAttribute('target');
         cta.removeAttribute('rel');
         cta.setAttribute('data-material', item.materialAttr || item.name || '');
@@ -191,6 +193,24 @@
     // Modal close handlers
     document.getElementById('mf-mat-modal-close')?.addEventListener('click', closeModal);
     document.querySelector('.mf-mat-modal-backdrop')?.addEventListener('click', closeModal);
+
+    // CTA: prefill form (si está en home) + cerrar modal
+    document.querySelector('.mf-mat-modal-cta')?.addEventListener('click', (e) => {
+      const cta = e.currentTarget;
+      const mat = cta.getAttribute('data-material');
+      if (mat) {
+        const sel = document.getElementById('mf-material');
+        const msg = document.getElementById('mf-msg');
+        if (sel) {
+          const opt = Array.from(sel.options).find(o => o.value === mat || o.text === mat);
+          if (opt) sel.value = opt.value || opt.text;
+        }
+        if (msg && !msg.value) {
+          msg.value = `Hola, quiero más información sobre ${mat}.`;
+        }
+      }
+      setTimeout(closeModal, 50);
+    });
     document.addEventListener('keydown', (e) => {
       const modal = document.getElementById('mf-mat-modal');
       if (!modal || !modal.classList.contains('is-open')) return;

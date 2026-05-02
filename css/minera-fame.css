@@ -2349,7 +2349,8 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
 .mf-mat-modal-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--c-ink);
 }
 
 .mf-mat-modal-swiper-prev,

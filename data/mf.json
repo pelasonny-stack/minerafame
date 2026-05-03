@@ -360,10 +360,26 @@
         "href": "#contacto",
         "materialAttr": "Mármol importado",
         "img": {
-          "src": "assets/minerafame/material-marmol.jpg",
+          "src": "pending:b528c954-3fe1-45e3-951d-adb53318802d",
           "alt": "Mármol"
         },
-        "gallery": []
+        "gallery": [
+          {
+            "src": "pending:5ce7fa72-79da-4487-915e-06bbfedb3ca6",
+            "alt": "",
+            "caption": "Mármol Renoir Blanc"
+          },
+          {
+            "src": "pending:d1dbd868-c75b-4e86-a012-4e4d651dfb7c",
+            "alt": "Mármol Arabescato",
+            "caption": ""
+          },
+          {
+            "src": "pending:a9d59bee-2806-43aa-ba92-26ac0d2d94ff",
+            "alt": "",
+            "caption": "Mármol Marrón Emperador"
+          }
+        ]
       },
       {
         "id": "granito",

@@ -221,13 +221,13 @@
         "ctaLabel": "Ver catálogo",
         "href": "https://caesarstoneargentina.com.ar/",
         "img": {
-          "src": "assets/minerafame/featured-caesarstone.jpg",
+          "src": "assets/uploads/mf/20260503-143807-dsc-2796-1-3.webp",
           "alt": "Caesarstone"
         },
         "gallery": [
           {
             "src": "assets/uploads/mf/20260430-181636-caesarstone.webp",
-            "alt": "",
+            "alt": "Caesarstone Opal Taj (Taj Mahal)",
             "caption": ""
           }
         ]

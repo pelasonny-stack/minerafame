@@ -261,13 +261,13 @@
         "href": "#contacto",
         "materialAttr": "Cuarcita",
         "img": {
-          "src": "assets/minerafame/material-cuarcita.jpg",
-          "alt": "Cuarcita Maestro"
+          "src": "assets/uploads/mf/20260503-142347-dsc-0338.webp",
+          "alt": "Cuarcita"
         },
         "gallery": [
           {
             "src": "assets/uploads/mf/20260430-170833-fc4395d1-ad38-4167-b0b0-50262789abb7-4.jpg",
-            "alt": ".",
+            "alt": "",
             "caption": "Cuarcita Crystallo"
           },
           {
@@ -276,9 +276,64 @@
             "caption": "Cuarcita Crystallo Estatuario"
           },
           {
-            "src": "",
+            "src": "assets/uploads/mf/20260503-142306-whatsapp-image-2025-11-26-at-11-27-02-2.jpg",
             "alt": "",
-            "caption": ""
+            "caption": "Cuarcita Black Taurus"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142310-dsc-1931-3.webp",
+            "alt": "",
+            "caption": "Cuarcita Maestro"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142313-dsc-1841-2.webp",
+            "alt": "",
+            "caption": "Cuarcita Taj Mahal"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142315-c0e3e387-b1bd-4c2b-a6ac-cc20be586c97-3.jpg",
+            "alt": "",
+            "caption": "Cuarcita Galapagos"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142335-dsc-1767.webp",
+            "alt": "",
+            "caption": "Cuarcita Maestro"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142320-299cc648-da75-4e87-a0cf-d56ff6df0988-3.jpg",
+            "alt": "",
+            "caption": "Cuarcita Artemis"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142323-8d75d44d-3e75-4c99-83cb-ff1cfb8cac6c-3.jpg",
+            "alt": "",
+            "caption": "Cuarcita Maldive"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142332-dsc-1892-1.webp",
+            "alt": "",
+            "caption": "Cuarcita Kouros - Negresco"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142327-whatsapp-image-2025-11-26-at-11-27-19-3.jpg",
+            "alt": "",
+            "caption": "Cuarcita Titanium Gold"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142337-dsc-1854-1.jpg",
+            "alt": "",
+            "caption": "Cuarcita Azurra Bay"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142341-dsc-1795.webp",
+            "alt": "",
+            "caption": "Cuarcita Rafaello"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142344-dsc-0325.webp",
+            "alt": "",
+            "caption": "Cuarcita Nybirus"
           }
         ]
       },

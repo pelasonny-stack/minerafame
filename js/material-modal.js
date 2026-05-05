@@ -207,24 +207,6 @@
       },
     });
 
-    const items = getItems();
-    const prevBtn = document.getElementById('mf-mat-modal-prev-mat');
-    const nextBtn = document.getElementById('mf-mat-modal-next-mat');
-    if (prevBtn) prevBtn.disabled = !findAdjIdx(items, currentIdx, -1);
-    if (nextBtn) nextBtn.disabled = !findAdjIdx(items, currentIdx, +1);
-  }
-
-  function findAdjIdx(items, fromIdx, dir) {
-    const i = fromIdx + dir;
-    return (i >= 0 && i < items.length) ? i : null;
-  }
-
-  function goAdj(dir) {
-    const items = getItems();
-    const next = findAdjIdx(items, currentIdx, dir);
-    if (next == null) return;
-    currentIdx = next;
-    renderModal(items[next]);
   }
 
   function init(data) {
@@ -298,12 +280,7 @@
       const modal = document.getElementById('mf-mat-modal');
       if (!modal || !modal.classList.contains('is-open')) return;
       if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowLeft' && e.shiftKey) { goAdj(-1); e.preventDefault(); }
-      if (e.key === 'ArrowRight' && e.shiftKey) { goAdj(+1); e.preventDefault(); }
     });
-
-    document.getElementById('mf-mat-modal-prev-mat')?.addEventListener('click', () => goAdj(-1));
-    document.getElementById('mf-mat-modal-next-mat')?.addEventListener('click', () => goAdj(+1));
   }
 
   document.addEventListener('site-data-ready', function (e) {

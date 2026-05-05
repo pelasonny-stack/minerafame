@@ -2160,6 +2160,17 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
 .mf-material-swiper-prev { left: 0.75rem; }
 .mf-material-swiper-next { right: 0.75rem; }
 
+/* Featured cards span 2 cols (materiales) o 2x2 (bento) → 2× la altura del
+   card regular. Para alinear las flechas con las de los cards regulares en
+   la misma fila, las posicionamos al 25% del alto del featured (= 50% del
+   alto del regular en pixels). Solo aplica donde featured comparte fila. */
+@media (min-width: 901px) {
+  .mf-material-card.featured .mf-material-swiper-prev,
+  .mf-material-card.featured .mf-material-swiper-next {
+    top: 25%;
+  }
+}
+
 .mf-material-card:hover .mf-material-swiper-prev,
 .mf-material-card:hover .mf-material-swiper-next,
 .mf-material-swiper-prev:focus-visible,
@@ -2324,39 +2335,6 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   transition: background var(--dur-fast);
 }
 .mf-mat-modal-close:hover { background: #fff; }
-
-.mf-mat-modal-prev-mat,
-.mf-mat-modal-next-mat {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 1.6rem;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: background var(--dur-fast);
-}
-
-.mf-mat-modal-prev-mat { left: 16px; }
-.mf-mat-modal-next-mat { right: 16px; }
-
-.mf-mat-modal-prev-mat:hover:not(:disabled),
-.mf-mat-modal-next-mat:hover:not(:disabled) {
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.mf-mat-modal-prev-mat:disabled,
-.mf-mat-modal-next-mat:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
 
 .mf-mat-modal-hero {
   position: relative;
@@ -2589,13 +2567,6 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
     top: 0; left: 0;
     transform: none;
   }
-  .mf-mat-modal-prev-mat,
-  .mf-mat-modal-next-mat {
-    width: 36px; height: 36px;
-    font-size: 1.2rem;
-  }
-  .mf-mat-modal-prev-mat { left: 8px; }
-  .mf-mat-modal-next-mat { right: 8px; }
   .mf-mat-modal-body { padding: 1.5rem 1.25rem 1rem; }
   .mf-mat-modal-footer { padding: 0.75rem 1.25rem 1rem; }
   .mf-mat-modal-title { font-size: 1.5rem; }

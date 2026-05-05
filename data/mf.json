@@ -226,11 +226,6 @@
         },
         "gallery": [
           {
-            "src": "assets/uploads/mf/20260505-121905-dsc-1705.webp",
-            "alt": "",
-            "caption": "Caesarstone Isobellia "
-          },
-          {
             "src": "assets/uploads/mf/20260505-121908-dsc-1692.webp",
             "alt": "",
             "caption": "Caesarstone Calcutta Borghini"
@@ -249,6 +244,41 @@
             "src": "assets/uploads/mf/20260505-122029-dsc-1734-1.webp",
             "alt": "",
             "caption": "Caesarstone Estatuario Venatian"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-122805-dsc-1748.webp",
+            "alt": "",
+            "caption": "Caesarstone Lithic Latte"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-122808-dsc-2795-5.webp",
+            "alt": "",
+            "caption": "Caesarstone Carrara Ice"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-122811-dsc-2786-1.webp",
+            "alt": "",
+            "caption": "Caesarstone Mosstone"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-122813-dsc-2774-1.webp",
+            "alt": "",
+            "caption": "Caesarstone Thalassa"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-121905-dsc-1705.webp",
+            "alt": "",
+            "caption": "Caesarstone Isobellia "
+          },
+          {
+            "src": "assets/uploads/mf/20260505-122816-dsc-2781.webp",
+            "alt": "",
+            "caption": "Caesarstone Almond Stone"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-122819-dsc-2771-2.webp",
+            "alt": "",
+            "caption": "Caesarstone Striata"
           }
         ]
       },
@@ -433,6 +463,17 @@
           "src": "assets/minerafame/material-granito.jpg",
           "alt": "Granito"
         },
+        "gallery": []
+      },
+      {
+        "id": "",
+        "name": "",
+        "tag": "",
+        "ctaLabel": "",
+        "href": "",
+        "materialAttr": "",
+        "img.src": "",
+        "img.alt": "",
         "gallery": []
       }
     ],

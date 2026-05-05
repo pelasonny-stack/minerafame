@@ -4,6 +4,37 @@
   let currentData = null;
   let currentIdx = -1;
   let modalSwiper = null;
+  let lockedScrollY = 0;
+  let isLocked = false;
+
+  function lockBodyScroll() {
+    if (isLocked) return;
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+    if (sbw > 0) document.body.style.paddingRight = `${sbw}px`;
+    document.documentElement.style.overflow = 'hidden';
+    isLocked = true;
+  }
+
+  function unlockBodyScroll() {
+    if (!isLocked) return;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    document.documentElement.style.overflow = '';
+    window.scrollTo(0, lockedScrollY);
+    isLocked = false;
+  }
 
   function escAttr(s) {
     return String(s == null ? '' : s)
@@ -35,7 +66,7 @@
     if (!modal) return;
     modal.hidden = false;
     requestAnimationFrame(() => modal.classList.add('is-open'));
-    document.body.style.overflow = 'hidden';
+    lockBodyScroll();
     document.getElementById('mf-mat-modal-close')?.focus();
     triggerZoomHint(modal);
   }
@@ -58,7 +89,7 @@
         modalSwiper.destroy(true, true);
         modalSwiper = null;
       }
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }, 280);
   }
 
@@ -221,7 +252,10 @@
 
     document.querySelector('.mf-mat-modal-cta')?.addEventListener('click', (e) => {
       const cta = e.currentTarget;
+      const href = cta.getAttribute('href') || '';
+      const linkTarget = cta.getAttribute('target');
       const mat = cta.getAttribute('data-material');
+
       if (mat) {
         const sel = document.getElementById('mf-material');
         const msg = document.getElementById('mf-msg');
@@ -233,7 +267,31 @@
           msg.value = `Hola, quiero más información sobre ${mat}.`;
         }
       }
-      setTimeout(closeModal, 50);
+
+      if (linkTarget === '_blank') {
+        closeModal();
+        return;
+      }
+
+      e.preventDefault();
+      const onHome = /\/(index\.html)?$/.test(location.pathname) || location.pathname === '/';
+      const anchorMatch = href.match(/#([^#?]+)/);
+      const anchorId = anchorMatch ? anchorMatch[1] : '';
+      const isCrossPage = href.startsWith('/') && !onHome;
+
+      if (isCrossPage) {
+        unlockBodyScroll();
+        window.location.href = href;
+        return;
+      }
+
+      closeModal();
+      if (anchorId) {
+        setTimeout(() => {
+          const t = document.getElementById(anchorId);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
     });
 
     document.addEventListener('keydown', (e) => {

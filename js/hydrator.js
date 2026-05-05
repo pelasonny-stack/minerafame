@@ -171,7 +171,8 @@
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 4000);
-      const resp = await fetch(url, { signal: ctrl.signal, cache: 'default' });
+      // 'no-cache' = revalida con servidor (304 si igual). Evita stale data tras update CMS.
+      const resp = await fetch(url, { signal: ctrl.signal, cache: 'no-cache' });
       clearTimeout(timer);
       if (!resp.ok) throw new Error('http ' + resp.status);
       return await resp.json();

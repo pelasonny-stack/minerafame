@@ -1921,13 +1921,21 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
 
 /* ─── MATERIALES PAGE (standalone) ──────────────────────────────────────── */
 .materiales-page { background: var(--mf-bone); }
+
+/* Header opaco desde top en materiales.html (hero claro → texto blanco se perdía) */
+.materiales-page .mf-header {
+  background: rgba(26,25,23,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); border: 0;
 }
 
 .materiales-hero {
-  padding: clamp(80px, 12vh, 140px) clamp(1.5rem, 5vw, 5rem) clamp(40px, 6vh, 70px);
+  padding: calc(var(--mf-header-h, 178px) + clamp(30px, 5vh, 70px)) clamp(1.5rem, 5vw, 5rem) clamp(40px, 6vh, 70px);
   background: var(--mf-bone);
   border-bottom: 1px solid var(--c-line);
 }
@@ -2142,10 +2150,11 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   background: rgba(26, 25, 23, 0.7);
   color: #f5f2f0;
   cursor: pointer;
-  opacity: 0.65;
-  transition: opacity var(--dur-fast) var(--ease-out), background var(--dur-fast);
+  opacity: 0.85;
+  transition: opacity var(--dur-fast) var(--ease-out), background var(--dur-fast), transform var(--dur-fast);
   display: grid;
   place-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
 }
 
 .mf-material-swiper-prev { left: 0.75rem; }
@@ -2156,6 +2165,7 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
 .mf-material-swiper-prev:focus-visible,
 .mf-material-swiper-next:focus-visible {
   opacity: 1;
+  transform: translateY(-50%) scale(1.05);
 }
 
 .mf-material-swiper-prev:hover,
@@ -2210,10 +2220,10 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   color: rgba(245, 242, 240, 0.95);
-  background: rgba(26, 25, 23, 0.75);
+  background: rgba(26, 25, 23, 0.78);
   padding: 0.4rem 0.7rem;
   border-radius: 3px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity var(--dur-med) var(--ease-out);
   text-transform: uppercase;
   pointer-events: none;
@@ -2223,11 +2233,34 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   text-overflow: ellipsis;
 }
 
+.mf-material-caption.is-empty {
+  opacity: 0;
+}
+
+.mf-material-counter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 4;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: rgba(26, 25, 23, 0.78);
+  padding: 0.3rem 0.55rem;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
 @media (max-width: 640px) {
   .mf-material-swiper-prev,
   .mf-material-swiper-next {
-    display: none;
+    width: 32px;
+    height: 32px;
+    opacity: 0.9;
   }
+  .mf-material-swiper-prev { left: 0.4rem; }
+  .mf-material-swiper-next { right: 0.4rem; }
   .mf-material-swiper-pagination {
     bottom: 0.5rem;
   }
@@ -2415,16 +2448,83 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   left: 14px;
   z-index: 5;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   letter-spacing: 0.05em;
   color: #fff;
-  background: rgba(26, 25, 23, 0.75);
+  background: rgba(26, 25, 23, 0.82);
   padding: 6px 12px;
   border-radius: 3px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity var(--dur-med) var(--ease-out);
   pointer-events: none;
   text-transform: uppercase;
+  max-width: calc(100% - 90px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mf-mat-modal-caption.is-empty {
+  opacity: 0;
+}
+
+.mf-mat-modal-counter {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: rgba(26, 25, 23, 0.82);
+  padding: 6px 10px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.mf-mat-modal-zoom-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: #fff;
+  background: rgba(26, 25, 23, 0.78);
+  padding: 6px 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.mf-mat-modal-zoom-hint.is-shown {
+  animation: mf-zoom-hint-fade 4.5s ease-out forwards;
+}
+
+.mf-mat-modal-zoom-hint svg {
+  flex-shrink: 0;
+}
+
+@keyframes mf-zoom-hint-fade {
+  0%, 70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(8px); }
+}
+
+.mf-mat-modal-swiper .swiper-zoom-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+}
+
+.mf-mat-modal-swiper .swiper-slide-zoomed .swiper-zoom-container {
+  cursor: zoom-out;
 }
 
 .mf-mat-modal-body {
@@ -2499,4 +2599,41 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .mf-mat-modal-body { padding: 1.5rem 1.25rem 1rem; }
   .mf-mat-modal-footer { padding: 0.75rem 1.25rem 1rem; }
   .mf-mat-modal-title { font-size: 1.5rem; }
+}
+
+
+/* ── Skeleton placeholder for lazy gallery images ──────────────────── */
+.mf-material-swiper .swiper-slide,
+.mf-mat-modal-swiper .swiper-slide {
+  background:
+    linear-gradient(110deg, rgba(255,255,255,0.04) 8%, rgba(255,255,255,0.10) 18%, rgba(255,255,255,0.04) 33%),
+    var(--mf-ash, #1a1917);
+  background-size: 200% 100%, 100% 100%;
+  animation: mf-skeleton-pulse 1.6s linear infinite;
+}
+
+.mf-material-swiper .swiper-slide.has-loaded,
+.mf-mat-modal-swiper .swiper-slide.has-loaded {
+  animation: none;
+  background: var(--mf-ash, #1a1917);
+}
+
+@keyframes mf-skeleton-pulse {
+  0%   { background-position: -150% 0, 0 0; }
+  100% { background-position: 150% 0, 0 0; }
+}
+
+/* Mobile modal nav swiper buttons: keep visible (Pablo: needs to discover navigation) */
+@media (max-width: 768px) {
+  .mf-mat-modal-swiper-prev,
+  .mf-mat-modal-swiper-next {
+    width: 36px;
+    height: 36px;
+  }
+  .mf-mat-modal-swiper-prev { left: 8px; }
+  .mf-mat-modal-swiper-next { right: 8px; }
+  .mf-mat-modal-zoom-hint {
+    font-size: 0.65rem;
+    padding: 5px 8px;
+  }
 }

@@ -16,8 +16,12 @@
   }
 
   function isExternalFeatured(item) {
-    // Featured Caesarstone tiene href externo (https://caesarstoneargentina...)
     return item && typeof item.href === 'string' && /^https?:\/\//.test(item.href);
+  }
+
+  function findIdxById(items, matId) {
+    if (!matId) return -1;
+    return items.findIndex(it => it && it.id === matId);
   }
 
   function openModal(idx) {
@@ -33,6 +37,15 @@
     requestAnimationFrame(() => modal.classList.add('is-open'));
     document.body.style.overflow = 'hidden';
     document.getElementById('mf-mat-modal-close')?.focus();
+    triggerZoomHint(modal);
+  }
+
+  function triggerZoomHint(modal) {
+    const hint = modal.querySelector('.mf-mat-modal-zoom-hint');
+    if (!hint) return;
+    hint.classList.remove('is-shown');
+    void hint.offsetWidth;
+    hint.classList.add('is-shown');
   }
 
   function closeModal() {
@@ -53,17 +66,20 @@
     const modal = document.getElementById('mf-mat-modal');
     if (!modal) return;
 
-    // Build slides: portada + gallery
     const slides = [];
     if (item.img && item.img.src) {
-      slides.push({ src: item.img.src, alt: item.img.alt || item.name || '', caption: '' });
+      slides.push({
+        src: item.img.src,
+        alt: item.img.alt || item.name || '',
+        caption: item.name || ''
+      });
     }
     if (Array.isArray(item.gallery)) {
       item.gallery.forEach(g => {
         if (g && g.src) slides.push({
           src: g.src,
-          alt: g.alt || item.name || '',
-          caption: g.caption || ''
+          alt: g.alt || g.caption || item.name || '',
+          caption: g.caption || g.alt || item.name || ''
         });
       });
     }
@@ -72,9 +88,18 @@
     if (wrapper) {
       wrapper.innerHTML = slides.map(s => `
         <div class="swiper-slide" data-caption="${escAttr(s.caption)}">
-          <img loading="lazy" src="${escAttr(s.src)}" alt="${escAttr(s.alt)}">
+          <div class="swiper-zoom-container">
+            <img loading="lazy" src="${escAttr(s.src)}" alt="${escAttr(s.alt)}"
+                 onload="this.closest('.swiper-slide').classList.add('has-loaded')">
+          </div>
         </div>
       `).join('');
+    }
+
+    const counter = modal.querySelector('.mf-mat-modal-counter');
+    if (counter) {
+      counter.textContent = slides.length > 1 ? '1/' + slides.length : '';
+      counter.style.display = slides.length > 1 ? '' : 'none';
     }
 
     modal.querySelector('.mf-mat-modal-eyebrow').textContent = (item.materialAttr || item.name || '').toUpperCase();
@@ -82,12 +107,10 @@
     modal.querySelector('.mf-mat-modal-tag').textContent = item.tag || '';
     modal.querySelector('.mf-mat-modal-tag').style.display = item.tag ? '' : 'none';
 
-    // Si el item tiene desc/description, usar
     const desc = item.desc || item.description || '';
     modal.querySelector('.mf-mat-modal-desc').textContent = desc;
     modal.querySelector('.mf-mat-modal-desc').style.display = desc ? '' : 'none';
 
-    // CTA dinámico: si href external (Caesarstone), va al sitio. Si no, a #contacto con prefill.
     const cta = modal.querySelector('.mf-mat-modal-cta');
     const ctaLabel = cta?.querySelector('.mf-mat-modal-cta-label');
     if (cta) {
@@ -98,7 +121,6 @@
         cta.removeAttribute('data-material');
         if (ctaLabel) ctaLabel.textContent = `Ver sitio ${item.name}`;
       } else {
-        // path absoluto para que funcione desde materiales.html (que no tiene #contacto local)
         const onHome = /\/(index\.html)?$/.test(location.pathname) || location.pathname === '/';
         cta.setAttribute('href', onHome ? '#contacto' : '/#contacto');
         cta.removeAttribute('target');
@@ -108,19 +130,21 @@
       }
     }
 
-    // Init Swiper
     if (modalSwiper) {
       modalSwiper.destroy(true, true);
       modalSwiper = null;
     }
 
-    function updateCaption(swiper) {
+    function updateUI(swiper) {
       const slide = swiper.slides[swiper.activeIndex];
       const cap = (slide && slide.dataset.caption) ? slide.dataset.caption : '';
       const capEl = modal.querySelector('.mf-mat-modal-caption');
       if (capEl) {
         capEl.textContent = cap;
-        capEl.style.opacity = cap ? '1' : '0';
+        capEl.classList.toggle('is-empty', !cap);
+      }
+      if (counter && swiper.slides.length > 1) {
+        counter.textContent = (swiper.realIndex + 1) + '/' + swiper.slides.length;
       }
     }
 
@@ -128,6 +152,11 @@
     modalSwiper = new Swiper(swEl, {
       loop: slides.length > 2,
       speed: 400,
+      zoom: {
+        maxRatio: 3,
+        minRatio: 1,
+        toggle: true
+      },
       navigation: {
         nextEl: modal.querySelector('.mf-mat-modal-swiper-next'),
         prevEl: modal.querySelector('.mf-mat-modal-swiper-prev'),
@@ -142,12 +171,11 @@
         nextSlideMessage: 'Foto siguiente',
       },
       on: {
-        init: updateCaption,
-        slideChange: updateCaption,
+        init: updateUI,
+        slideChange: updateUI,
       },
     });
 
-    // Update prev/next material buttons disabled state
     const items = getItems();
     const prevBtn = document.getElementById('mf-mat-modal-prev-mat');
     const nextBtn = document.getElementById('mf-mat-modal-next-mat');
@@ -171,30 +199,26 @@
   function init(data) {
     currentData = data;
 
-    // Hook clicks en cards
     document.querySelectorAll('.mf-materials-grid .mf-material-card').forEach((card, idx) => {
-      // Get material idx from data-edit-bind-href if available (templates render fresh)
-      // OR use array index from card position
       card.addEventListener('click', (e) => {
-        // Don't open modal if clicked the explicit "Consultar" CTA inside card
         if (e.target.closest('.mf-material-cta-link')) return;
-        // Don't open modal if clicked swiper controls (slider inline)
         if (e.target.closest('.mf-material-swiper-prev, .mf-material-swiper-next, .swiper-pagination-bullet')) return;
 
         const items = getItems();
-        const item = items[idx];
+        const matId = card.dataset.matId;
+        let resolvedIdx = matId ? findIdxById(items, matId) : -1;
+        if (resolvedIdx < 0) resolvedIdx = idx;
+        const item = items[resolvedIdx];
         if (!item) return;
 
         e.preventDefault();
-        openModal(idx);
+        openModal(resolvedIdx);
       });
     });
 
-    // Modal close handlers
     document.getElementById('mf-mat-modal-close')?.addEventListener('click', closeModal);
     document.querySelector('.mf-mat-modal-backdrop')?.addEventListener('click', closeModal);
 
-    // CTA: prefill form (si está en home) + cerrar modal
     document.querySelector('.mf-mat-modal-cta')?.addEventListener('click', (e) => {
       const cta = e.currentTarget;
       const mat = cta.getAttribute('data-material');
@@ -211,15 +235,15 @@
       }
       setTimeout(closeModal, 50);
     });
+
     document.addEventListener('keydown', (e) => {
       const modal = document.getElementById('mf-mat-modal');
       if (!modal || !modal.classList.contains('is-open')) return;
       if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowLeft' && !modalSwiper?.params?.keyboard?.enabled) goAdj(-1);
-      if (e.key === 'ArrowRight' && !modalSwiper?.params?.keyboard?.enabled) goAdj(+1);
+      if (e.key === 'ArrowLeft' && e.shiftKey) { goAdj(-1); e.preventDefault(); }
+      if (e.key === 'ArrowRight' && e.shiftKey) { goAdj(+1); e.preventDefault(); }
     });
 
-    // Prev/next entre materiales
     document.getElementById('mf-mat-modal-prev-mat')?.addEventListener('click', () => goAdj(-1));
     document.getElementById('mf-mat-modal-next-mat')?.addEventListener('click', () => goAdj(+1));
   }

@@ -226,8 +226,28 @@
         },
         "gallery": [
           {
+            "src": "assets/uploads/mf/20260505-121905-dsc-1705.webp",
+            "alt": "",
+            "caption": "Caesarstone Isobellia "
+          },
+          {
+            "src": "assets/uploads/mf/20260505-121908-dsc-1692.webp",
+            "alt": "",
+            "caption": "Caesarstone Calcutta Borghini"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-121911-dsc-1723-2.webp",
+            "alt": "",
+            "caption": "Caesarstone Lithic Coin"
+          },
+          {
             "src": "assets/uploads/mf/20260430-181636-caesarstone.webp",
-            "alt": "Caesarstone Opal Taj (Taj Mahal)",
+            "alt": "",
+            "caption": "Caesarstone Opal Taj (Taj Mahal)"
+          },
+          {
+            "src": "",
+            "alt": "",
             "caption": ""
           }
         ]

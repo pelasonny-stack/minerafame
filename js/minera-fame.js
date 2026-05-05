@@ -55,7 +55,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   initHeroSwiper();
   initProjectsSwiper();
   initStatCounters();
+
+  /* Si llegamos con hash (#contacto u otro), re-scroll con offset correcto
+     una vez que la hidratación + swipers terminaron de mover el layout. */
+  rescrollToHash();
 });
+
+function rescrollToHash() {
+  const hash = window.location.hash;
+  if (!hash || hash.length < 2) return;
+  const id = hash.slice(1);
+  const headerEl = document.getElementById('mf-header') || document.querySelector('.mf-header');
+  const headerH = headerEl ? headerEl.offsetHeight : 88;
+
+  const doScroll = () => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  requestAnimationFrame(() => requestAnimationFrame(doScroll));
+  setTimeout(doScroll, 250);
+  setTimeout(doScroll, 700);
+  window.addEventListener('load', () => setTimeout(doScroll, 50), { once: true });
+}
 
 /* ── Hero Swiper ─────────────────────────────────────────────────────────── */
 function initHeroSwiper() {

@@ -18,8 +18,10 @@ function initSmartAnchorScroll() {
   });
 
   document.addEventListener('click', (e) => {
+    if (e.defaultPrevented) return;
     const a = e.target.closest('a[href^="#"], a[href*=".html#"]');
     if (!a) return;
+    if (a.classList.contains('mf-material-card')) return;
     const href = a.getAttribute('href') || '';
     const hashIdx = href.indexOf('#');
     if (hashIdx === -1) return;

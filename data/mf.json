@@ -214,7 +214,7 @@
     "desc": "Desde el mármol clásico hasta la porcelana técnica más avanzada. Importadores directos y representantes oficiales de las mejores marcas del mundo.",
     "items": [
       {
-        "id": "caesarstone",
+        "id": "Caesarstone Sinterizado",
         "featured": true,
         "name": "Caesarstone Sinterizado",
         "tag": "Representante Oficial · 11 modelos en stock",
@@ -285,7 +285,8 @@
             "alt": "",
             "caption": "Caesarstone Fossillia"
           }
-        ]
+        ],
+        "materialAttr": "Caesarstone Sinterizado"
       },
       {
         "id": "cuarzo-copia",

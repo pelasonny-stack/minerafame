@@ -166,7 +166,7 @@
     ],
     "cta": {
       "label": "Contactarnos por WhatsApp",
-      "href": "https://wa.me/5491159311038",
+      "href": "https://wa.me/5491131749906",
       "external": true
     },
     "differentials": [
@@ -537,7 +537,7 @@
         "id": "whatsapp",
         "icon": "whatsapp",
         "label": "WhatsApp",
-        "value": "+54 11 31749-906",
+        "value": "+54 11 3174-9906",
         "href": "https://wa.me/5491131749906"
       },
       {
@@ -566,7 +566,7 @@
       {
         "id": "whatsapp",
         "icon": "whatsapp",
-        "href": "https://wa.me/5491159311038"
+        "href": "https://wa.me/5491131749906"
       }
     ],
     "form": {
@@ -628,7 +628,7 @@
       {
         "id": "whatsapp",
         "icon": "whatsapp",
-        "href": "https://wa.me/5491159311038"
+        "href": "https://wa.me/5491131749906"
       }
     ]
   }

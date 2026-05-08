@@ -352,11 +352,6 @@
             "caption": "Cuarcita Crystallo Estatuario"
           },
           {
-            "src": "assets/uploads/mf/20260503-142306-whatsapp-image-2025-11-26-at-11-27-02-2.jpg",
-            "alt": "",
-            "caption": "Cuarcita Black Taurus"
-          },
-          {
             "src": "assets/uploads/mf/20260503-142310-dsc-1931-3.webp",
             "alt": "",
             "caption": "Cuarcita Blue Roma"
@@ -365,6 +360,11 @@
             "src": "assets/uploads/mf/20260503-142313-dsc-1841-2.webp",
             "alt": "",
             "caption": "Cuarcita Taj Mahal"
+          },
+          {
+            "src": "assets/uploads/mf/20260503-142306-whatsapp-image-2025-11-26-at-11-27-02-2.jpg",
+            "alt": "",
+            "caption": "Cuarcita Black Taurus"
           },
           {
             "src": "assets/uploads/mf/20260503-142315-c0e3e387-b1bd-4c2b-a6ac-cc20be586c97-3.jpg",
@@ -415,6 +415,11 @@
             "src": "assets/uploads/mf/20260508-133627-whatsapp-image-2026-05-08-at-10-06-29.jpg",
             "alt": "",
             "caption": "Cuarcita Da Vinci"
+          },
+          {
+            "src": "assets/uploads/mf/20260508-134344-whatsapp-image-2026-05-08-at-10-41-57.jpg",
+            "alt": "",
+            "caption": "Cuarcita Taj Mahal"
           }
         ]
       },

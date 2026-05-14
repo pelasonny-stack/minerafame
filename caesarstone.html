@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Caesarstone en Argentina — Distribuidor oficial · Minera Fame</title>
+  <meta name="description" content="11 modelos Caesarstone con stock inmediato en Buenos Aires. Distribuidor oficial, 50 años de trayectoria. Visitá nuestros showrooms en Caseros y Pacheco.">
+  <meta property="og:title" content="Caesarstone en Argentina — Distribuidor oficial">
+  <meta property="og:description" content="11 modelos con stock inmediato. Showrooms en Caseros y Pacheco.">
+  <meta property="og:image" content="/assets/minerafame/hero-caesarstone.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/minerafame/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Outfit:wght@300..700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/minera-fame.css">
+  <style>
+    /* ── Landing Caesarstone — estilos específicos sobre tokens existentes ── */
+    .cs-page { background: var(--mf-bone); color: var(--c-ink); }
+
+    /* HERO */
+    .cs-hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 620px;
+      overflow: hidden;
+      color: #fff;
+    }
+    .cs-hero-bg {
+      position: absolute; inset: 0;
+      background: #1a1917;
+    }
+    .cs-hero-bg iframe {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 177.78vh;
+      height: 56.25vw;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+      border: 0;
+    }
+    .cs-hero-bg::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(26,25,23,0.45) 0%, rgba(26,25,23,0.15) 30%, rgba(26,25,23,0.55) 100%),
+        linear-gradient(120deg, rgba(26,25,23,0.55) 0%, rgba(26,25,23,0.10) 60%);
+    }
+    .cs-hero-content {
+      position: relative; z-index: 2;
+      height: 100%;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(2rem,6vw,6rem) clamp(1.5rem,5vw,5rem) clamp(4rem,8vw,8rem);
+      max-width: 900px;
+    }
+    .cs-hero-logo {
+      height: clamp(56px,7vw,96px);
+      width: auto;
+      filter: brightness(0) invert(1);
+      margin-bottom: clamp(1.5rem,3vw,2.5rem);
+      opacity: 0.98;
+    }
+    .cs-hero-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,242,240,0.7);
+      margin-bottom: 1rem;
+    }
+    .cs-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem,7vw,6rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 0.96;
+      letter-spacing: var(--mf-tracking-display);
+      margin-bottom: 1.25rem;
+    }
+    .cs-hero-sub {
+      font-size: clamp(1rem,1.6vw,1.2rem);
+      color: rgba(245,242,240,0.78);
+      max-width: 52ch;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+    .cs-hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .cs-hero-scroll {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      z-index: 2;
+      animation: cs-bounce 2.5s ease-in-out infinite;
+    }
+    @keyframes cs-bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+      50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
+    }
+
+    /* STATS BAR */
+    .cs-stats {
+      background: var(--mf-earth);
+      color: #fff;
+      padding: clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,5rem);
+    }
+    .cs-stats-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+    .cs-stat {
+      text-align: left;
+      border-left: 1px solid rgba(255,255,255,0.18);
+      padding-left: 1.5rem;
+    }
+    .cs-stat:first-child { border-left: none; padding-left: 0; }
+    .cs-stat-value {
+      display: block;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2.2rem,4vw,3.6rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--mf-brass);
+      margin-bottom: 0.5rem;
+    }
+    .cs-stat-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    @media (max-width: 720px) {
+      .cs-stats-inner { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+      .cs-stat { border-left: none; padding-left: 0; }
+    }
+
+    /* SECTION SHELL */
+    .cs-section {
+      padding: clamp(4rem,9vw,8rem) clamp(1.5rem,5vw,5rem);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .cs-section-head { max-width: 720px; margin-bottom: clamp(2.5rem,5vw,4.5rem); }
+    .cs-eyebrow {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mf-terracotta);
+      margin-bottom: 1rem;
+    }
+    .cs-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem,5vw,3.6rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: var(--mf-tracking-display);
+      color: var(--mf-earth);
+      margin-bottom: 1rem;
+    }
+    .cs-section-lead {
+      font-size: clamp(1rem,1.4vw,1.15rem);
+      color: var(--c-ink);
+      opacity: 0.75;
+      line-height: 1.7;
+      max-width: 56ch;
+    }
+
+    /* WHY (diferenciadores) */
+    .cs-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: clamp(1.5rem,3vw,2.5rem);
+    }
+    .cs-why-card {
+      background: #fff;
+      border: 1px solid var(--mf-ash);
+      border-radius: var(--r-md);
+      padding: clamp(1.5rem,2.5vw,2.25rem);
+      transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) ease;
+    }
+    .cs-why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px -16px rgba(26,25,23,0.18);
+    }
+    .cs-why-icon {
+      width: 44px; height: 44px;
+      border-radius: 999px;
+      background: var(--mf-bone);
+      color: var(--mf-terracotta);
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .cs-why-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--mf-earth);
+      margin-bottom: 0.6rem;
+    }
+    .cs-why-text {
+      font-size: 0.95rem;
+      color: var(--c-ink);
+      opacity: 0.72;
+      line-height: 1.65;
+    }
+    @media (max-width: 880px) {
+      .cs-why-grid { grid-template-columns: 1fr; }
+    }
+
+    /* MODELS GRID */
+    .cs-models { background: #fff; border-top: 1px solid var(--mf-ash); border-bottom: 1px solid var(--mf-ash); }
+    .cs-models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+      gap: 1px;
+      background: var(--mf-ash);
+      border: 1px solid var(--mf-ash);
+    }
+    .cs-model {
+      background: #fff;
+      padding: 1.75rem 1.5rem;
+      display: flex; flex-direction: column;
+      gap: 0.5rem;
+      transition: background var(--dur-fast) ease;
+    }
+    .cs-model:hover { background: var(--mf-bone); }
+    .cs-model-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--mf-brass);
+    }
+    .cs-model-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--mf-earth);
+      line-height: 1.2;
+    }
+    .cs-model-tag {
+      font-size: 0.75rem;
+      color: var(--c-ink);
+      opacity: 0.55;
+      letter-spacing: 0.04em;
+    }
+
+    /* APPLICATIONS — split rows */
+    .cs-apps { display: flex; flex-direction: column; gap: clamp(3rem,6vw,5rem); }
+    .cs-app {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem,5vw,4rem);
+      align-items: center;
+    }
+    .cs-app:nth-child(even) > .cs-app-image { order: 2; }
+    .cs-app-image {
+      aspect-ratio: 4/3;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--mf-ash);
+    }
+    .cs-app-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cs-app-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem,3.5vw,2.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--mf-earth);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .cs-app-text {
+      font-size: 1rem;
+      color: var(--c-ink);
+      opacity: 0.72;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .cs-app-features {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex; flex-direction: column;
+      gap: 0.6rem;
+    }
+    .cs-app-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--c-ink);
+    }
+    .cs-app-features svg {
+      flex-shrink: 0;
+      margin-top: 4px;
+      color: var(--mf-terracotta);
+    }
+    @media (max-width: 880px) {
+      .cs-app { grid-template-columns: 1fr; }
+      .cs-app:nth-child(even) > .cs-app-image { order: 0; }
+    }
+
+    /* SHOWROOM */
+    .cs-showroom { background: var(--mf-earth); color: #fff; }
+    .cs-showroom .cs-section-title { color: #fff; }
+    .cs-showroom .cs-eyebrow { color: var(--mf-brass); }
+    .cs-showroom .cs-section-lead { color: rgba(255,255,255,0.7); }
+
+    .cs-locations {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: clamp(1.5rem,3vw,2.5rem);
+      margin-bottom: clamp(2.5rem,5vw,4rem);
+    }
+    .cs-location {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-md);
+      padding: clamp(1.75rem,3vw,2.5rem);
+      display: flex; flex-direction: column;
+      gap: 1rem;
+    }
+    .cs-location-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mf-brass);
+    }
+    .cs-location-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #fff;
+      margin: 0;
+    }
+    .cs-location-address {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+    .cs-location-meta {
+      display: flex; flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.78);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .cs-location-meta a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .cs-location-meta a:hover { border-bottom-color: #fff; }
+    .cs-location-row { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+    @media (max-width: 720px) { .cs-locations { grid-template-columns: 1fr; } }
+
+    /* FINAL CTA */
+    .cs-final {
+      background: var(--mf-bone);
+      padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,5rem);
+      text-align: center;
+    }
+    .cs-final-inner { max-width: 760px; margin: 0 auto; }
+    .cs-final-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2rem,5vw,3.4rem);
+      color: var(--mf-earth);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .cs-final-text {
+      font-size: 1.05rem;
+      color: var(--c-ink);
+      opacity: 0.72;
+      line-height: 1.7;
+      max-width: 52ch;
+      margin: 0 auto 2.5rem;
+    }
+    .cs-final-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .cs-btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.25rem;
+      background: var(--mf-earth);
+      color: #fff;
+      border-radius: var(--r-sm);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background var(--dur-fast), transform var(--dur-fast);
+    }
+    .cs-btn-dark:hover { background: #000; transform: translateY(-1px); }
+
+    .cs-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.25rem;
+      background: transparent;
+      color: var(--mf-earth);
+      border: 1.5px solid var(--mf-earth);
+      border-radius: var(--r-sm);
+      text-decoration: none;
+      transition: background var(--dur-fast), color var(--dur-fast);
+    }
+    .cs-btn-outline:hover { background: var(--mf-earth); color: #fff; }
+
+    /* FOOTER */
+    .cs-footer {
+      background: #0f0e0d;
+      color: rgba(255,255,255,0.6);
+      padding: 2.5rem clamp(1.5rem,5vw,5rem);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .cs-footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    .cs-footer a:hover { color: #fff; }
+    .cs-footer-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  </style>
+</head>
+
+<body class="cs-page">
+
+<!-- SVG Sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="cs-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="cs-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="cs-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="cs-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="cs-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="cs-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="cs-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.04 20.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06s-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.29z"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="mf-header" id="cs-header" role="banner">
+  <div class="mf-header-ribbon">
+    <span class="mf-ribbon-label">Distribuidor oficial:</span>
+    <strong style="color:#fff;">Caesarstone Argentina</strong>
+    <span class="mf-ribbon-sep">·</span>
+    <span class="mf-ribbon-brands">11 modelos con stock inmediato</span>
+  </div>
+  <div class="mf-header-main">
+    <a href="/" class="mf-logo-link" aria-label="Minera Fame — Inicio">
+      <img class="mf-header-logo" src="/assets/logos/minera-fame.png" alt="Minera Fame S.A.">
+    </a>
+    <nav class="mf-header-nav" aria-label="Navegación">
+      <a href="#modelos">Modelos</a>
+      <a href="#aplicaciones">Aplicaciones</a>
+      <a href="#showroom">Showroom</a>
+      <a class="mf-header-cta" href="#agendar">Agendar visita</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="cs-hero" aria-label="Caesarstone en Argentina">
+  <div class="cs-hero-bg">
+    <iframe title="Caesarstone — cocina" allow="autoplay; fullscreen; picture-in-picture" src="https://player.vimeo.com/video/1091739592?background=1&autoplay=1&loop=1&muted=1&playsinline=1"></iframe>
+  </div>
+  <div class="cs-hero-content">
+    <img class="cs-hero-logo" src="/assets/logos/caesarstone-logo.png" alt="Caesarstone">
+    <p class="cs-hero-eyebrow">Distribuidor oficial · Buenos Aires</p>
+    <h1 class="cs-hero-title">El cuarzo<br>que define un espacio.</h1>
+    <p class="cs-hero-sub">11 modelos Caesarstone con stock inmediato en nuestros showrooms de Caseros y Pacheco. Importadores directos, medición, colocación y soporte técnico en un solo lugar.</p>
+    <div class="cs-hero-cta">
+      <a class="mf-btn-light" href="#agendar">Agendar visita al showroom</a>
+      <a class="mf-btn-ghost" href="#modelos">Ver los 11 modelos</a>
+    </div>
+  </div>
+  <a class="cs-hero-scroll" href="#stats" aria-label="Bajar a contenido">
+    <span>Conocer más</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- STATS -->
+<section class="cs-stats" id="stats" aria-label="Datos clave">
+  <div class="cs-stats-inner">
+    <div class="cs-stat">
+      <span class="cs-stat-value">11</span>
+      <span class="cs-stat-label">Modelos en stock</span>
+    </div>
+    <div class="cs-stat">
+      <span class="cs-stat-value">50+</span>
+      <span class="cs-stat-label">Años de trayectoria</span>
+    </div>
+    <div class="cs-stat">
+      <span class="cs-stat-value">2</span>
+      <span class="cs-stat-label">Showrooms en Buenos Aires</span>
+    </div>
+    <div class="cs-stat">
+      <span class="cs-stat-value">3.000</span>
+      <span class="cs-stat-label">m² de planta propia</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="cs-section" aria-labelledby="cs-why-title">
+  <div class="cs-section-head">
+    <span class="cs-eyebrow">Por qué Minera Fame</span>
+    <h2 class="cs-section-title" id="cs-why-title">Caesarstone, llave en mano.</h2>
+    <p class="cs-section-lead">Como distribuidor oficial, no solo te vendemos el material: lo importamos, lo medimos, lo cortamos y lo colocamos. Una sola interlocución para todo el proyecto.</p>
+  </div>
+
+  <div class="cs-why-grid">
+    <article class="cs-why-card">
+      <span class="cs-why-icon"><svg width="22" height="22" aria-hidden="true"><use href="#cs-shield"/></svg></span>
+      <h3 class="cs-why-title">Garantía oficial</h3>
+      <p class="cs-why-text">Material auténtico Caesarstone con certificado de origen. Garantía residencial de 25 años respaldada por la fábrica.</p>
+    </article>
+    <article class="cs-why-card">
+      <span class="cs-why-icon"><svg width="22" height="22" aria-hidden="true"><use href="#cs-truck"/></svg></span>
+      <h3 class="cs-why-title">Stock inmediato</h3>
+      <p class="cs-why-text">11 modelos siempre disponibles en planta. Reservá hoy, retirás o entregamos en obra dentro de Buenos Aires.</p>
+    </article>
+    <article class="cs-why-card">
+      <span class="cs-why-icon"><svg width="22" height="22" aria-hidden="true"><use href="#cs-check"/></svg></span>
+      <h3 class="cs-why-title">Medición + colocación</h3>
+      <p class="cs-why-text">Visitamos tu obra, medimos, cortamos en nuestra planta de Caseros y colocamos con seguimiento técnico hasta la entrega.</p>
+    </article>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="cs-models" id="modelos" aria-labelledby="cs-models-title">
+  <div class="cs-section" style="padding-top:clamp(4rem,8vw,7rem); padding-bottom:clamp(2rem,4vw,3rem);">
+    <div class="cs-section-head">
+      <span class="cs-eyebrow">Catálogo en stock</span>
+      <h2 class="cs-section-title" id="cs-models-title">Once modelos, una sola firma.</h2>
+      <p class="cs-section-lead">Desde el blanco purísimo del Carrara Ice hasta el dramatismo del Calcutta Borghini. Cada modelo seleccionado por su comportamiento en clima local y demanda del mercado argentino.</p>
+    </div>
+  </div>
+
+  <div class="cs-models-grid">
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">01</span><span class="cs-model-name">Calcutta Borghini</span><span class="cs-model-tag">Veteado dramático</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">02</span><span class="cs-model-name">Lithic Coin</span><span class="cs-model-tag">Tono cálido</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">03</span><span class="cs-model-name">Opal Taj</span><span class="cs-model-tag">Inspiración Taj Mahal</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">04</span><span class="cs-model-name">Estatuario Venatian</span><span class="cs-model-tag">Mármol clásico</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">05</span><span class="cs-model-name">Lithic Latte</span><span class="cs-model-tag">Beige suave</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">06</span><span class="cs-model-name">Carrara Ice</span><span class="cs-model-tag">Blanco puro</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">07</span><span class="cs-model-name">Mosstone</span><span class="cs-model-tag">Verde natural</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">08</span><span class="cs-model-name">Thalassa</span><span class="cs-model-tag">Profundidad marina</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">09</span><span class="cs-model-name">Isobellia</span><span class="cs-model-tag">Veteado refinado</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">10</span><span class="cs-model-name">Almond Stone</span><span class="cs-model-tag">Neutro contemporáneo</span></a>
+    <a href="#agendar" class="cs-model"><span class="cs-model-num">11</span><span class="cs-model-name">Striata</span><span class="cs-model-tag">Líneas arquitectónicas</span></a>
+  </div>
+
+  <div class="cs-section" style="padding-top:clamp(2rem,3vw,3rem); padding-bottom:clamp(4rem,7vw,6rem); text-align:center;">
+    <p style="font-size:0.95rem; color:var(--c-ink); opacity:0.65; margin-bottom:1.5rem;">Querés ver las placas en persona, tocar la textura y comparar bajo luz natural?</p>
+    <a class="cs-btn-dark" href="#agendar">Agendar visita al showroom <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="cs-section" id="aplicaciones" aria-labelledby="cs-apps-title">
+  <div class="cs-section-head">
+    <span class="cs-eyebrow">Aplicaciones</span>
+    <h2 class="cs-section-title" id="cs-apps-title">Para vivir, cocinar y trabajar.</h2>
+    <p class="cs-section-lead">Caesarstone resiste manchas, calor moderado, ralladuras y el uso cotidiano sin perder la apariencia del primer día. Ideal donde la superficie es protagonista.</p>
+  </div>
+
+  <div class="cs-apps">
+    <article class="cs-app">
+      <div class="cs-app-image">
+        <img src="/assets/minerafame/hero-caesarstone.jpg" alt="Mesada Caesarstone en cocina con isla" loading="lazy">
+      </div>
+      <div>
+        <h3 class="cs-app-title">Mesadas de cocina</h3>
+        <p class="cs-app-text">La aplicación más demandada. Cuarzo no poroso que no requiere sellado: resiste vino, café, aceite y cítricos sin manchar. Disponible en formato extra-large para islas sin uniones visibles.</p>
+        <ul class="cs-app-features">
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Sin sellado anual</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Hasta 3,28 × 1,64 m por placa</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> 4 espesores: 12, 13, 20, 30 mm</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="cs-app">
+      <div class="cs-app-image">
+        <img src="/assets/minerafame/featured-caesarstone.jpg" alt="Caesarstone en baño contemporáneo" loading="lazy">
+      </div>
+      <div>
+        <h3 class="cs-app-title">Baños y vanitorios</h3>
+        <p class="cs-app-text">Por su impermeabilidad, Caesarstone es la elección natural para áreas húmedas. Vanitorios monolíticos, bachas integradas, revestimientos a piso, todo en el mismo material y la misma firma.</p>
+        <ul class="cs-app-features">
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Resistente a humedad y vapor</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Higiénico, no porte microorganismos</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Bachas y bordes integrados</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="cs-app">
+      <div class="cs-app-image">
+        <img src="/assets/minerafame/hero-caesarstone.jpg" alt="Aplicación comercial en barra de bar" loading="lazy">
+      </div>
+      <div>
+        <h3 class="cs-app-title">Proyectos comerciales</h3>
+        <p class="cs-app-text">Trabajamos con estudios y constructoras en hospitalidad, retail y oficinas. Faena Hotel, Hilton, Unicenter, Quartier Madero y Galicia Green Building entre nuestros antecedentes.</p>
+        <ul class="cs-app-features">
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Logística para obras grandes</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Cumplimiento de pliegos técnicos</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#cs-check"/></svg> Soporte técnico en obra</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- SHOWROOM -->
+<section class="cs-showroom" id="showroom" aria-labelledby="cs-show-title">
+  <div class="cs-section">
+    <div class="cs-section-head">
+      <span class="cs-eyebrow">Showrooms</span>
+      <h2 class="cs-section-title" id="cs-show-title">Las placas, en vivo.</h2>
+      <p class="cs-section-lead">Tocar el material, compararlo con muestras propias, ver bajo luz natural y artificial. Dos puntos en Buenos Aires con stock físico de los 11 modelos.</p>
+    </div>
+
+    <div class="cs-locations">
+      <article class="cs-location">
+        <span class="cs-location-tag">Casa Central</span>
+        <h3 class="cs-location-name">Caseros</h3>
+        <p class="cs-location-address">Puán 5403, Caseros, Buenos Aires</p>
+        <div class="cs-location-meta">
+          <span class="cs-location-row"><svg width="16" height="16" aria-hidden="true"><use href="#cs-phone"/></svg> <a href="tel:+541131749906">+54 11 3174-9906</a></span>
+          <span class="cs-location-row"><svg width="16" height="16" aria-hidden="true"><use href="#cs-clock"/></svg> Lunes a viernes, 8:00 – 17:00 hs</span>
+          <span class="cs-location-row"><svg width="16" height="16" aria-hidden="true"><use href="#cs-pin"/></svg> <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Pu%C3%A1n+5403+Caseros">Cómo llegar</a></span>
+        </div>
+      </article>
+
+      <article class="cs-location">
+        <span class="cs-location-tag">Sucursal Norte</span>
+        <h3 class="cs-location-name">Ricardo Rojas (Pacheco)</h3>
+        <p class="cs-location-address">Quirno Costa 6345, Ricardo Rojas, Buenos Aires</p>
+        <div class="cs-location-meta">
+          <span class="cs-location-row"><svg width="16" height="16" aria-hidden="true"><use href="#cs-phone"/></svg> <a href="tel:+541135836485">+54 11 3583-6485</a></span>
+          <span class="cs-location-row"><svg width="16" height="16" aria-hidden="true"><use href="#cs-clock"/></svg> Lunes a viernes, 8:00 – 17:00 hs</span>
+          <span class="cs-location-row"><svg width="16" height="16" aria-hidden="true"><use href="#cs-pin"/></svg> <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Quirno+Costa+6345+Ricardo+Rojas">Cómo llegar</a></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cs-final" id="agendar" aria-labelledby="cs-final-title">
+  <div class="cs-final-inner">
+    <span class="cs-eyebrow">Próximo paso</span>
+    <h2 class="cs-final-title" id="cs-final-title">Agendá tu visita al showroom.</h2>
+    <p class="cs-final-text">Coordinamos un horario, te recibimos con muestras físicas de los 11 modelos y revisamos tu proyecto. Sin compromiso, sin costo.</p>
+    <div class="cs-final-actions">
+      <a class="cs-btn-dark" href="https://wa.me/5491131749906?text=Hola%20Minera%20Fame%2C%20quiero%20agendar%20una%20visita%20al%20showroom%20para%20ver%20Caesarstone." target="_blank" rel="noopener">
+        <svg width="18" height="18" aria-hidden="true"><use href="#cs-wa"/></svg>
+        Agendar por WhatsApp
+      </a>
+      <a class="cs-btn-outline" href="mailto:info@minerafame.com?subject=Visita%20showroom%20Caesarstone&body=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20visita%20para%20conocer%20los%20modelos%20Caesarstone%20en%20stock.">Escribir por email</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="cs-footer" role="contentinfo">
+  <div class="cs-footer-row">
+    <a href="/">Inicio</a>
+    <a href="/materiales.html">Materiales</a>
+    <a href="#showroom">Showrooms</a>
+    <a href="https://wa.me/5491131749906" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div>Minera Fame S.A. · Distribuidor oficial Caesarstone Argentina · © 2026</div>
+</footer>
+
+<script>
+  // Header scroll state (reusa mf-header.scrolled)
+  (function(){
+    const h = document.getElementById('cs-header');
+    if (!h) return;
+    const onScroll = () => h.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+</body>
+</html>

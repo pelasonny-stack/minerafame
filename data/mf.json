@@ -226,11 +226,6 @@
         },
         "gallery": [
           {
-            "src": "assets/uploads/mf/20260505-121908-dsc-1692.webp",
-            "alt": "",
-            "caption": "Caesarstone Calcutta Borghini"
-          },
-          {
             "src": "assets/uploads/mf/20260505-121911-dsc-1723-2.webp",
             "alt": "",
             "caption": "Caesarstone Lithic Coin"
@@ -319,6 +314,16 @@
             "src": "assets/uploads/mf/20260907-152902-circa-503.jpg",
             "alt": "",
             "caption": "Circa (Silk) #503"
+          },
+          {
+            "src": "assets/uploads/mf/20260907-153022-glorious-carrara.jpg",
+            "alt": "",
+            "caption": "Caesarstone Glorious Carrara (Satin)"
+          },
+          {
+            "src": "assets/uploads/mf/20260505-121908-dsc-1692.webp",
+            "alt": "",
+            "caption": "Caesarstone Calcutta Borghini"
           }
         ],
         "materialAttr": "Caesarstone Sinterizado"
